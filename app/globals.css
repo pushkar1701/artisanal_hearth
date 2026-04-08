@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Artisanal Hearth — design tokens derived from Stitch design-theme.json */
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), ui-serif, Georgia, serif;
+
+  --color-ah-bg: #fcf9f4;
+  --color-ah-on-bg: #1c1c19;
+  --color-ah-on-surface-variant: #424841;
+  --color-ah-primary: #37563b;
+  --color-ah-primary-container: #4f6f52;
+  --color-ah-on-primary: #ffffff;
+  --color-ah-secondary: #934a2e;
+  --color-ah-secondary-fixed: #ffdbcf;
+  --color-ah-on-secondary-fixed-variant: #753319;
+  --color-ah-tertiary-container: #5e6d33;
+  --color-ah-on-tertiary-container: #ddeea7;
+  --color-ah-surface-low: #f6f3ee;
+  --color-ah-surface-high: #ebe8e3;
+  --color-ah-surface-highest: #e5e2dd;
+  --color-ah-outline-variant: #c2c8bf;
+  --color-ah-stone-100: #f0ede8;
+  --color-ah-emerald-950: #022c22;
+  --color-ah-error: #ba1a1a;
+  --color-ah-secondary-container: #ffa17f;
+  --color-ah-on-secondary-container: #78351b;
+  --color-ah-on-secondary-fixed-variant: #753319;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(252, 249, 244, 1) 35%,
+    rgba(252, 249, 244, 0.35) 100%
+  );
+}
+
+body {
+  @apply bg-ah-bg text-ah-on-bg antialiased;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-serif-display {
+  font-family: var(--font-noto-serif), ui-serif, Georgia, serif;
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | The Artisanal Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "inverse-primary": "#acd0ad",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdbcf",
+                    "tertiary": "#47541d",
+                    "secondary-fixed-dim": "#ffb59b",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-container-high": "#ebe8e3",
+                    "on-surface": "#1c1c19",
+                    "surface-bright": "#fcf9f4",
+                    "tertiary-container": "#5e6d33",
+                    "on-primary-fixed-variant": "#2f4e33",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffa17f",
+                    "tertiary-fixed": "#d9eaa3",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#4f6f52",
+                    "surface-dim": "#dcdad5",
+                    "surface-variant": "#e5e2dd",
+                    "primary": "#37563b",
+                    "primary-fixed-dim": "#acd0ad",
+                    "on-error": "#ffffff",
+                    "secondary": "#934a2e",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#c8ecc8",
+                    "on-secondary-fixed-variant": "#753319",
+                    "surface-tint": "#466649",
+                    "outline": "#737971",
+                    "on-secondary-container": "#78351b",
+                    "background": "#fcf9f4",
+                    "outline-variant": "#c2c8bf",
+                    "on-background": "#1c1c19",
+                    "on-primary-container": "#ccf0cc",
+                    "on-secondary-fixed": "#380d00",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#bdce89",
+                    "on-tertiary-fixed": "#161f00",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-container": "#ddeea7",
+                    "on-primary-fixed": "#03210b",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "surface-container": "#f0ede8",
+                    "on-surface-variant": "#424841"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed-dim">
+<!-- TopNavBar -->
+<nav class="bg-stone-50/70 backdrop-blur-md text-emerald-800 font-['Noto_Serif'] font-medium tracking-tight docked full-width top-0 sticky z-50 tonal-shift-bg border-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-emerald-900">The Artisanal Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 hover:text-emerald-700 transition-colors duration-300" href="#">Daily Menu</a>
+<a class="text-stone-600 hover:text-emerald-700 transition-colors duration-300" href="#">Meal Plans</a>
+<a class="text-stone-600 hover:text-emerald-700 transition-colors duration-300" href="#">Party Orders</a>
+<a class="text-stone-600 hover:text-emerald-700 transition-colors duration-300" href="#">Chef Profiles</a>
+<a class="text-emerald-900 border-b-2 border-emerald-800 pb-1" href="#">Admin Dashboard</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative group cursor-pointer">
+<span class="material-symbols-outlined text-emerald-800" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<div class="relative group cursor-pointer">
+<span class="material-symbols-outlined text-emerald-800" data-icon="account_circle">account_circle</span>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-white px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-all active:scale-95 shadow-sm">
+                    Order Now
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 pt-12 pb-24">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="text-5xl font-headline text-on-surface mb-2">Curate Today's Hearth</h1>
+<p class="text-on-surface-variant font-body max-w-2xl">Shape the daily dining experience by adding seasonal dishes and managing artisan quantities.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Menu Form -->
+<div class="lg:col-span-7 space-y-12">
+<section class="bg-surface-container-low rounded-xl p-10 space-y-8">
+<div class="space-y-1">
+<h2 class="text-2xl font-headline text-primary">Dish Details</h2>
+<p class="text-sm text-on-surface-variant">Update ingredients and availability for the daily rotation.</p>
+</div>
+<form class="space-y-8">
+<!-- File Upload -->
+<div class="group relative flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-outline-variant/30 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/40 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-primary mb-2" data-icon="add_a_photo">add_a_photo</span>
+<span class="text-sm font-medium text-primary">Upload Dish Photography</span>
+<span class="text-xs text-on-surface-variant mt-1">High-res warm-toned images preferred</span>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Dish Name</label>
+<input class="w-full bg-surface-variant border-none rounded-t-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50 px-4 py-3" placeholder="e.g., Heirloom Tomato &amp; Basil Tart" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Price (₹)</label>
+<input class="w-full bg-surface-variant border-none rounded-t-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50 px-4 py-3" placeholder="e.g., 450" type="number"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Ingredients List</label>
+<textarea class="w-full bg-surface-variant border-none rounded-t-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50 px-4 py-3" placeholder="List key ingredients separated by commas..." rows="3"></textarea>
+</div>
+<!-- Dietary Highlights Section -->
+<div class="space-y-4">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Dietary Highlights</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<label class="flex items-center p-3 bg-surface-variant/30 rounded-lg cursor-pointer hover:bg-surface-variant/50 transition-colors">
+<input class="w-4 h-4 text-primary bg-surface-variant border-outline-variant rounded focus:ring-primary/20" type="checkbox"/>
+<span class="ml-2 text-sm text-on-surface">Vegan</span>
+</label>
+<label class="flex items-center p-3 bg-surface-variant/30 rounded-lg cursor-pointer hover:bg-surface-variant/50 transition-colors">
+<input class="w-4 h-4 text-primary bg-surface-variant border-outline-variant rounded focus:ring-primary/20" type="checkbox"/>
+<span class="ml-2 text-sm text-on-surface">Gluten Free</span>
+</label>
+<label class="flex items-center p-3 bg-surface-variant/30 rounded-lg cursor-pointer hover:bg-surface-variant/50 transition-colors">
+<input class="w-4 h-4 text-primary bg-surface-variant border-outline-variant rounded focus:ring-primary/20" type="checkbox"/>
+<span class="ml-2 text-sm text-on-surface">Keto Friendly</span>
+</label>
+<label class="flex items-center p-3 bg-surface-variant/30 rounded-lg cursor-pointer hover:bg-surface-variant/50 transition-colors">
+<input class="w-4 h-4 text-primary bg-surface-variant border-outline-variant rounded focus:ring-primary/20" type="checkbox"/>
+<span class="ml-2 text-sm text-on-surface">Lactose Free</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Quantity Available</label>
+<input class="w-full bg-surface-variant border-none rounded-t-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50 px-4 py-3" placeholder="40" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-label font-semibold text-on-surface-variant ml-1">Calories (Per Serving)</label>
+<div class="flex items-center">
+<input class="w-full bg-surface-variant border-none rounded-t-md focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/50 px-4 py-3" placeholder="420" type="number"/>
+<span class="ml-3 text-xs text-on-surface-variant italic whitespace-nowrap">Calculated via hearth-standard</span>
+</div>
+</div>
+</div>
+<!-- Calorie Calculator Management -->
+<div class="p-4 bg-tertiary/5 rounded-xl border border-tertiary/10 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-wider text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">analytics</span>
+                            Calorie Calculator Settings
+                        </span>
+<button class="text-xs font-medium text-primary hover:underline" type="button">Manage Algorithms</button>
+</div>
+<div class="grid grid-cols-2 gap-4 text-[11px] text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/20 pb-1">
+<span>Base Formula:</span>
+<span class="font-bold">Mifflin-St Jeor</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-1">
+<span>Ingredient Precision:</span>
+<span class="font-bold">High (+/- 2%)</span>
+</div>
+</div>
+</div>
+<div class="pt-4 flex gap-4">
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-white py-4 rounded-xl font-bold text-lg shadow-sm hover:opacity-95 transition-opacity" type="submit">Publish to Daily Menu</button>
+<button class="px-8 py-4 bg-secondary-fixed text-secondary font-bold rounded-xl hover:opacity-90 transition-opacity" type="button">Save Draft</button>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Column: Preview & History -->
+<div class="lg:col-span-5 space-y-12">
+<!-- Live Preview Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline text-on-surface">Live Preview</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary font-bold">User View</span>
+</div>
+<div class="bg-surface-container-high rounded-xl overflow-hidden group">
+<div class="h-72 overflow-hidden">
+<img alt="Gourmet Salad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up overhead view of a colorful gourmet salad with vibrant beets, goat cheese, and edible flowers on a ceramic plate with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp1JND2WD7jihz8DhxE6ZiAfXMBkVavV2qnekjck6xYIGwMm1dOGXtdu9Oo-ZxpLCvELyIx3VJ1of67ZQirgjEuu7GueNKNm8E7qxMaWgLQiDqzayQPeV2sq21fUU9tMFlF9iD92KTKb2YRb9yYnfqwwQ8Oxw7EAhDIGzZAKHJgTdA31b4J1qTdDetsuDmSewlIuXuoZe0a6aw7B6rV8f6msfDmgoP6_irGC8DK5ZD8v7J14EFRdzztYJPH7bjCE6brS16kE3mc1il"/>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase">Chef's Special</span>
+<span class="text-xs text-on-surface-variant font-label">420 kcal</span>
+</div>
+<h4 class="text-3xl font-headline text-on-surface">Summer Hearth Salad</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed font-body">
+                                Roasted heirloom beets, artisanal goat cheese pearls, toasted walnuts, and a whisper of honey-balsamic reduction over baby arugula.
+                            </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] font-bold text-on-surface-variant uppercase">Vegan</span>
+<span class="px-2 py-0.5 rounded bg-surface-variant text-[10px] font-bold text-on-surface-variant uppercase">Gluten Free</span>
+</div>
+<div class="pt-4 flex items-center justify-between border-t border-outline-variant/10">
+<div class="text-2xl font-headline text-primary">₹1,250</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-lg" data-icon="inventory_2">inventory_2</span>
+                                    12 left today
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Menus Section -->
+<section class="bg-surface-container-low rounded-xl p-8 space-y-6">
+<h3 class="text-xl font-headline text-on-surface">Quick Clone Recent</h3>
+<div class="space-y-4">
+<!-- Clone Card 1 -->
+<div class="flex items-center p-4 bg-surface-container-lowest rounded-lg hover:bg-primary-fixed transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Bowl" class="w-full h-full object-cover" data-alt="Rustic wooden bowl filled with vibrant green pesto pasta and fresh basil leaves on a weathered stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxj3kpfiZdDwdnfO41j-jupdaLShj3uG_7DE8whvuekOJVUNvcVAP2WZ5LFRP6F1Nh4lU_Rk0QfHo0lALzHYWvv683EutM5sPzKQk-nMYOCiAVSr_MVWLc1JGj0Uh7s5KkTpuuKakSAPmpThX9xWOuWPk4BzVmVeo6yayR-Jb-OIr5vXyhFZ6EBUe0Q8wkhh4XOn-ZlUSSJuoYZRnhANLKUYrJnxszei5RXW42QwiTUFHoyaHgfiZ1YaXi-2p1S2r4phEsGyR65DGc"/>
+</div>
+<div class="ml-4 flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-bold text-on-surface group-hover:text-primary">Wild Pesto Gnocchi</h5>
+<span class="text-sm font-bold text-primary">₹890</span>
+</div>
+<p class="text-xs text-on-surface-variant">Last served: 2 days ago</p>
+</div>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity ml-4" data-icon="content_copy">content_copy</span>
+</div>
+<!-- Clone Card 2 -->
+<div class="flex items-center p-4 bg-surface-container-lowest rounded-lg hover:bg-primary-fixed transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Roast" class="w-full h-full object-cover" data-alt="Succulent roasted chicken breast with rosemary sprigs and charred lemon slices on a vintage silver platter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKsKO4VAYuNwLKNn4vUOdM0WPT1qIMZoJYJ2EcV1Onyh6cOO_uUL7GCMNu99Do-IvwV-b1DP3uWoA1SgxkUmkAVdhboQ7A8lC1-xLGLEfGTtmLnnZCJIiF7G0Qmq9JGuVewxcgIIFqdbzKASYnn-3B1eK9a7E6m1pK-uXuEw2QbMWxB2BmlLn8e41EUwUOUtjazk1zp68A4mszYe-gg4JDa3o8dQk4nqMEKGNYDCq-4DZVgY8xmlOn6UAGl8AqNwINRX2LGPKBh3Z8"/>
+</div>
+<div class="ml-4 flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-bold text-on-surface group-hover:text-primary">Rosemary Chicken</h5>
+<span class="text-sm font-bold text-primary">₹1,150</span>
+</div>
+<p class="text-xs text-on-surface-variant">Last served: 4 days ago</p>
+</div>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity ml-4" data-icon="content_copy">content_copy</span>
+</div>
+<!-- Clone Card 3 -->
+<div class="flex items-center p-4 bg-surface-container-lowest rounded-lg hover:bg-primary-fixed transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Salmon" class="w-full h-full object-cover" data-alt="Pan-seared salmon fillet with a golden crust resting on a bed of asparagus spears and white cream sauce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxYsgAdpLFHaszMf4sAwQqmMFpCg1wKc-yojS0huw_gOl31iliOXfgvLAqYTF7xqbC0oSKuD5mZnwqjpFYuUOCac6XYuJS91dQfNhHapcgbTnTMfi3CbJ6dL3HFwHfyFfqRaOoczc2iBbAgyP9v7CGoZfmH2vSSzsuQ_nDl4aP4jaCIv_zYtYrsGVHHT-z_XneXcKvfQqk2D_5IXO8TzsfYIJ2LbX1lbBown_buSOzyHjysB5R2vnD79LqR92p6pHIANj2fjCssiSk"/>
+</div>
+<div class="ml-4 flex-1">
+<div class="flex justify-between items-start">
+<h5 class="font-bold text-on-surface group-hover:text-primary">Pan-Seared Salmon</h5>
+<span class="text-sm font-bold text-primary">₹1,450</span>
+</div>
+<p class="text-xs text-on-surface-variant">Last served: 1 week ago</p>
+</div>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity ml-4" data-icon="content_copy">content_copy</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 full-width mt-20 pt-16 pb-8 tonal shift using surface-container-low border-none">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-screen-xl mx-auto font-['Plus_Jakarta_Sans'] text-sm tracking-wide">
+<div class="space-y-6">
+<div class="font-serif text-lg text-emerald-900 dark:text-emerald-100">The Artisanal Hearth</div>
+<p class="text-stone-500 max-w-xs leading-relaxed">Honoring the agrarian traditions of slow cooking and seasonal harvesting. Delivered daily to your table.</p>
+</div>
+<div class="space-y-4">
+<h6 class="text-emerald-800 dark:text-emerald-400 font-bold uppercase tracking-widest text-xs">Navigation</h6>
+<ul class="space-y-3">
+<li><a class="text-stone-500 hover:text-terracotta-600 transition-all ease-in-out duration-200" href="#">Contact Us</a></li>
+<li><a class="text-stone-500 hover:text-terracotta-600 transition-all ease-in-out duration-200" href="#">About Our Chefs</a></li>
+<li><a class="underline decoration-emerald-500 text-emerald-800 dark:text-emerald-400 font-medium" href="#">Admin Dashboard</a></li>
+<li><a class="text-stone-500 hover:text-terracotta-600 transition-all ease-in-out duration-200" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h6 class="text-emerald-800 dark:text-emerald-400 font-bold uppercase tracking-widest text-xs">Sustainability</h6>
+<div class="bg-white/50 dark:bg-black/20 p-6 rounded-xl space-y-3">
+<p class="text-xs italic text-stone-600 dark:text-stone-400">"Our packaging is 100% compostable, mirroring our commitment to the earth that feeds us."</p>
+<div class="h-px bg-stone-200 dark:bg-stone-800 w-12"></div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center border-t border-stone-200 dark:border-stone-800 pt-8">
+<p class="text-stone-500 text-xs">© 2024 The Artisanal Hearth. Made with intention.</p>
+</div>
+</footer>
+<!-- Floating Action Button (Admin Specific) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary hover:bg-primary-container text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all active:scale-90 group">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+<span class="absolute right-16 bg-on-surface text-white px-3 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Help &amp; Guidelines</span>
+</button>
+</div>
+</body></html>

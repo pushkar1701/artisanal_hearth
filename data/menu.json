@@ -1,0 +1,34 @@
+{
+  "dishes": [
+    {
+      "id": "d1",
+      "name": "Homestyle dal & seasonal sabzi",
+      "description": "Yellow moong dal tadka, seasonal vegetables, rotis & rice.",
+      "priceInr": 180,
+      "quantityAvailable": 24,
+      "tags": [
+        "High protein",
+        "Less oil"
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Heritage grain & roasted root bowl",
+      "description": "Quinoa, wild rice, roasted roots, greens.",
+      "priceInr": 320,
+      "quantityAvailable": 12,
+      "tags": [
+        "Veg",
+        "480 kcal"
+      ]
+    },
+    {
+      "id": "d_1775681120373_t6ncosu",
+      "name": "New dish",
+      "priceInr": 199,
+      "quantityAvailable": 10,
+      "tags": [],
+      "description": ""
+    }
+  ]
+}

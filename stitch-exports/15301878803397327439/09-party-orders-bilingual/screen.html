@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "inverse-primary": "#acd0ad",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdbcf",
+                    "tertiary": "#47541d",
+                    "secondary-fixed-dim": "#ffb59b",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-container-high": "#ebe8e3",
+                    "on-surface": "#1c1c19",
+                    "surface-bright": "#fcf9f4",
+                    "tertiary-container": "#5e6d33",
+                    "on-primary-fixed-variant": "#2f4e33",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffa17f",
+                    "tertiary-fixed": "#d9eaa3",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#4f6f52",
+                    "surface-dim": "#dcdad5",
+                    "surface-variant": "#e5e2dd",
+                    "primary": "#37563b",
+                    "primary-fixed-dim": "#acd0ad",
+                    "on-error": "#ffffff",
+                    "secondary": "#934a2e",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#c8ecc8",
+                    "on-secondary-fixed-variant": "#753319",
+                    "surface-tint": "#466649",
+                    "outline": "#737971",
+                    "on-secondary-container": "#78351b",
+                    "background": "#fcf9f4",
+                    "outline-variant": "#c2c8bf",
+                    "on-background": "#1c1c19",
+                    "on-primary-container": "#ccf0cc",
+                    "on-secondary-fixed": "#380d00",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#bdce89",
+                    "on-tertiary-fixed": "#161f00",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-container": "#ddeea7",
+                    "on-primary-fixed": "#03210b",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "surface-container": "#f0ede8",
+                    "on-surface-variant": "#424841"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(252, 249, 244, 0.7);
+        backdrop-filter: blur(12px);
+      }
+      .primary-gradient-btn {
+        background: linear-gradient(to bottom right, #37563b, #4f6f52);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopNavBar -->
+<nav class="bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-md text-emerald-800 dark:text-emerald-400 font-['Noto_Serif'] font-medium tracking-tight docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100">The Artisanal Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-colors" href="#">Daily Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-colors" href="#">Meal Plans</a>
+<a class="text-emerald-900 dark:text-emerald-100 border-b-2 border-emerald-800 pb-1" href="#">Party Orders</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 transition-colors" href="#">Chef Profiles</a>
+</div>
+<div class="flex items-center space-x-6">
+<!-- Language Switcher -->
+<div aria-label="Change Language" class="flex items-center gap-1 text-xs font-semibold text-stone-500 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="language">language</span>
+<span>EN</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center space-x-4">
+<button aria-label="Shopping Cart"><span class="material-symbols-outlined cursor-pointer" data-icon="shopping_basket">shopping_basket</span></button>
+<button aria-label="User Account"><span class="material-symbols-outlined cursor-pointer" data-icon="account_circle">account_circle</span></button>
+</div>
+<button class="primary-gradient-btn text-on-primary px-6 py-2 rounded-xl text-sm font-medium transition-all active:opacity-80">Order Now</button>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-12">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2 space-y-6">
+<h1 class="text-6xl font-headline text-primary leading-tight">Elevated Celebrations, <span class="italic">Artfully Served.</span></h1>
+<p class="text-lg text-on-surface-variant max-w-xl">Whether an intimate gathering or a grand festive milestone, we bring the warmth of our kitchen to your table with curated Indian catering and bespoke services.</p>
+<div class="flex gap-4">
+<a class="primary-gradient-btn text-white px-8 py-4 rounded-xl font-medium text-lg" href="#enquiry-form">Request a Quote</a>
+<button class="flex items-center gap-2 text-secondary font-semibold px-8 py-4 bg-secondary-fixed rounded-xl">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        WhatsApp Us
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl transform rotate-1">
+<img alt="Indian festive catering buffet" class="w-full h-full object-cover" data-alt="A lavish Indian festive buffet spread with copper serving bowls containing colorful curries, saffron rice, and assorted naan, decorated with marigold flowers and warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC10-wfoPDJ2w_KxaFjfvo5G9fa8OTmy2UwC5ElKclxVfUwG4mJAKXsloqBucqirjACTt8KjYGmuVIjzfWqU18HVW-80NZeZ1tMg0uJZ8ghXzjgyll_7AV2A576X5-3P0knbXa4szdrRO1MPkWN-V0uuG0dHPHGwKPiHH5SQP_wLAYw4E-afD7C8yNjq-TaSxMULagdviyTE10VoELYAOVePL4pDh63wHv27oaGNmVt5f1DGO9xE24zIcgmi-xdwn4Q3lzkEZSik0-q"/>
+</div>
+<div class="absolute -bottom-8 -left-8 aspect-square w-48 rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform -rotate-3 hidden lg:block">
+<img alt="Family gathering enjoying food" class="w-full h-full object-cover" data-alt="Close-up of hands sharing traditional Indian snacks and mithai at a family dinner table decorated for a celebration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmTbwnSsvdSzkeYgSA-qea1Y89Cv6Z-SMj7951ZO8xIdUOfN64qLYY0Kqxc7Y1TGx983fV2qncZ1lZxyDkoBHaEjGPMPa5lHOsbFgV3y2qVRQzFvlI8JJXVjrBtBsbhAEITrcC03EY7IISVFZBUx5h8jta4CVIseUiKFscT-SATq23zWLXaDL6qS0AWclrdP2Ibm2untlcv5kjgoftOCHes6chn8eR_YUZmouDxsedt-wtoeJ81uCrYudyBzZm3JYddEfnjQg9eQ3Y"/>
+</div>
+</div>
+</section>
+<!-- Service Types -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-7 bg-surface-container-low rounded-[2.5rem] p-12 flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10 max-w-md">
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-xs font-label uppercase tracking-widest mb-4 inline-block">Service 01</span>
+<h2 class="text-4xl font-headline text-primary mb-4">Party Food</h2>
+<p class="text-on-surface-variant mb-8">From festive gatherings to corporate events, we handle the delicious details. Our Indian fusion menus are the highlight of any celebration.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 20 to 500 Guests</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Live Chaat &amp; Tandoor Stations</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Custom Menu Planning</li>
+</ul>
+</div>
+<div class="md:absolute md:-right-12 md:bottom-0 w-full md:w-1/2 aspect-square rounded-tl-[3rem] overflow-hidden">
+<img alt="Indian buffet setup" class="w-full h-full object-cover" data-alt="Rows of elegant stainless steel chafing dishes at a luxury hotel banquet, serving hot Indian delicacies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmZ3mMr6DuutRoEuaeUwCeg-oZAw4HpJp86cTkE3vKMG7XGe-BQqHz6ts-3I1W1yhO1doKPcgxIEHKpjBzQWBUjxWRfZ86AnnEfzdDsInnPk1h4dpRlQlSe4mvkXJf0-cDQ95DkRQEfuIjKwluYFKpbkaz0kBwj5fhB3vAjSwWG7nOLZpAnSRounTQmaG-FFvaxFkyX3eM-0Hx5KPY6TT3qYlhQB0KYiLorEOnoGKXJ3xUDHA2g0cLeoSLw38pLPjPdlHIrIbDQBCo"/>
+</div>
+</div>
+<div class="md:col-span-5 bg-tertiary text-on-tertiary rounded-[2.5rem] p-12 flex flex-col gap-6">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1 rounded-full text-xs font-label uppercase tracking-widest w-fit">Service 02</span>
+<h2 class="text-4xl font-headline italic">Chef at Home</h2>
+<p class="opacity-80">Transform your dining room into an artisanal restaurant. Our chefs prepare a multi-course Indian meal live in your kitchen.</p>
+<div class="mt-auto aspect-video rounded-2xl overflow-hidden">
+<img alt="Chef cooking at home" class="w-full h-full object-cover grayscale brightness-75" data-alt="Professional chef finishing a plating of gourmet Indian cuisine in a warm, modern home kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcsQfOQWK6qZ61sXURhb3sL7tFNG4ug-bdWyQK3DZ84yeZVPs9A5hB6aCZOcoHvxDIFvj9tc7lD0dKwCWPdTdP_ayMqA6W5Hs8tqjsa1BzoioRVvkTJa3aT9Nl3wPUxVsx5JPcIng-6q47T68oXJu_KGETIxRyGSXjoAz5spwZ_x19udsdpagnIDAPRbhjV4uctIiQA4c427Y9ZWHI66_7FGNvwTtc3h464U7b9OvFvY2iMugJ22CLhPiUt21G52M09GQQ_8CZRtv5"/>
+</div>
+<button class="w-full py-4 border border-tertiary-fixed/30 rounded-xl font-medium hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors">Learn More</button>
+</div>
+</div>
+</section>
+<!-- Enquiry Form -->
+<section class="mb-32" id="enquiry-form">
+<div class="bg-surface-container-high rounded-[3rem] p-8 md:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-headline text-primary mb-4">Tell us about your party</h2>
+<p class="text-on-surface-variant text-lg">Help us understand your celebration so we can create a proposal just for you.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="full-name">Your Name</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" id="full-name" placeholder="e.g. Julianne Smith" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="email">Email</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" id="email" placeholder="julianne@example.com" required="" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="occasion">What's the occasion?</label>
+<select class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20 appearance-none" id="occasion">
+<option>Wedding Ceremony</option>
+<option>Festive Celebration</option>
+<option>Birthday Party</option>
+<option>Corporate Dinner</option>
+<option>Private Home Dining</option>
+<option>Other</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="guests">How many guests?</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" id="guests" min="1" placeholder="20" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="date">Event Date</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" id="date" type="date"/>
+</div>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1" for="notes">Any special requests or food preferences?</label>
+<textarea class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" id="notes" placeholder="Mention dietary needs like vegetarian, vegan, or spice level preferences..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex flex-col items-center gap-6 mt-8">
+<button class="primary-gradient-btn text-white px-12 py-5 rounded-full font-bold text-xl shadow-lg shadow-primary/20 w-full md:w-auto" type="submit">Request a Quote</button>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="lock">lock</span>
+                                Your privacy matters. We'll only contact you about your event.
+                            </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 font-['Plus_Jakarta_Sans'] text-sm tracking-wide full-width mt-20 pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-screen-xl mx-auto">
+<div class="space-y-4">
+<div class="font-serif text-lg text-emerald-900 dark:text-emerald-100">The Artisanal Hearth</div>
+<p class="text-stone-500">Bringing the craft of the hearth to every table. Hand-made, locally sourced, intentionally prepared.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-bold text-emerald-800 dark:text-emerald-400">Quick Links</h4>
+<div class="flex flex-col space-y-2">
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Contact Us</a>
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">About Our Chefs</a>
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-emerald-800 dark:text-emerald-400">Join Our Hearth</h4>
+<p class="text-stone-500">Subscribe for seasonal menu launches and exclusive event invitations.</p>
+<div class="flex">
+<input aria-label="Email address for newsletter" class="bg-surface border-none rounded-l-lg px-4 py-2 w-full text-on-surface" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-r-lg">Join</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center border-t border-stone-200 dark:border-stone-800 pt-8 text-stone-500">
+            © 2024 The Artisanal Hearth. Made with intention.
+        </div>
+</footer>
+<!-- WhatsApp Floating Action -->
+<div class="fixed bottom-8 right-8 z-50">
+<a aria-label="Chat with us on WhatsApp" class="bg-primary hover:bg-primary-container text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat with our Chef</span>
+</a>
+</div>
+</body></html>

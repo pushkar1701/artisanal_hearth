@@ -1,0 +1,125 @@
+{
+  "projectId": "15301878803397327439",
+  "screens": [
+    {
+      "title": "Design System",
+      "slug": "01-design-system",
+      "id": "asset-stub-assets-7621a7147b66481fbe4b326095265e62-1775676815977",
+      "ok": true,
+      "error": null,
+      "htmlUrl": null,
+      "imageUrl": null,
+      "note": "Design system asset: exported as design-system.md, design-theme.json, list_design_systems.json (no screen HTML/screenshot in API)."
+    },
+    {
+      "title": "Updated Admin Dashboard - Dietary Tags",
+      "slug": "02-admin-dashboard-dietary-tags",
+      "id": "f36ec84a3c494943b321ee6283ea4336",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzYxMTQzMTg0NmE2MTQzNjI4NTE2YTg5ZTQ0NTY1N2IwEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0ui1YSkvjqbzputfJjoqlto94cUF9yFglzAfXBmDRMOKyP6bxnwNjsK-ltrzUJkT6kcEtD-pcbmgNeJM09kMS4MIkXRzFeZZCjn-7pvjWRzm5QiCgMngJ98jiuk8i3coJZDp6cRxSY1VBXDpeKVMaBcXd_N-6NheuM4Z2qchWiJueQb3_68d-w3P2j61W-19L-ys7cHy7MHBMzTmMuQJOI_dKYZ3oTXiJPYDRwo22M6GkbRrHRKA7wgbmajp",
+      "note": null
+    },
+    {
+      "title": "Updated Home Page - Indian Food & INR",
+      "slug": "03-home-indian-food-inr",
+      "id": "902950ae103b44e6a68ac9e8c0ecbb28",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2Y1ZWY5NTRlMDU1YTQ4ZjhhMzYzMDY4ZGIyMTJlN2QxEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0ug4u8xcMliJiz4Ahpl0C398XparK6PNXpklxuWMhlNGtYouDchBsdcjHGMqauUIxDuMfems61GUYWfvI2wYEV-AgIL-CtOzAZNlzf1ns_QXXAWHTrwwb3DlMudGtGqqdIl8rF0W7b-Jbgb_CmG5Ya_1_JJxaSWYl6HYHKFvJXxM25T26PjlQeofb6nMyt1KsmlSaNYXK3YBi1hS12sg2umw5jcnjcQX9yiPGtnKyVWRSsOCvh74Of2EgyE",
+      "note": null
+    },
+    {
+      "title": "Subscription Meal Plans",
+      "slug": "04-subscription-meal-plans",
+      "id": "90aa0a2f534d40bfb1a0a75f1518178e",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2YxYzU2OWRjYmY0MjRjNTBhYjhhYzQwODkzMzJlODdjEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uinKegliQURMQCK2HeXQPx6pnMJan302Y8JChvKVtnlEqX9_3ESOEXOW2oaUiubS1Fsxx4dEqT8-egchQO4aq286lKeI3ICKy524FkcdSmw1Cf5zhUmV6lsmR_F-DeypaYAq-kZ9KaSILt1pwD5jeeht-MzhTnH01jhlZyl_m8IxMjWQ9c9RTLjfLtryVE710Zk1XYgT6sPMB5yG3ywjfnAuitEYLPz-VFRoM_XO1BNImO4FMXxcIb23eTA",
+      "note": null
+    },
+    {
+      "title": "Admin Menu Dashboard",
+      "slug": "05-admin-menu-dashboard",
+      "id": "3f549208ec2947e5a90c9ad8419f0d43",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2RkN2Y2NTI2OWY2MzQwZWM5MWVmMDI3OTQzMmM0ZWIyEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhi8bU6flemCcEl1d-HNNqcF5Qt9Pi5yDr4WPNQ8ErB2Hwx-HHTSfEhl8SdN0UK7A2Z9lTgp2VTw3_KWU3E5XP0OUQduXma6MklyGSptz94PFBlh5q7WPs8bBWMtGFLUfMxo0fuwrRG1j2ODawZcZzfkT76ksgtI48w6xQTVlkmM-m48gKDQ5Zzz8jIXveuCZagE5FYTrbli5qfKwtSne0RIskRFTjGGlrGse2VCSgBK2wL__d9vBKb7V1r",
+      "note": null
+    },
+    {
+      "title": "Secure Checkout",
+      "slug": "06-secure-checkout",
+      "id": "a203036c88a54b7a97327aca8d1636c1",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2FhZDk2NzE4ZjBiYzQzYjZiNDk3Y2U4YjRmNmE4Mzk1EgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhTdQn9fqSU_LTjAOo05l-HKDWneXiAyNx1lJymLxAa0b7wfWJdNT6fLpN7NQXqvnVa2yl-at0MfoGN4L78P44kAQrQHqgwGSZWy9XDBkM45uPCQnNAMJvtRLnkPAvfs-1_FpV3Po2sIh9JGbmPj7GN8chl5AT5AG1Z65TqnxRO-rPIRdMunzGXxSZd-YW8SQw0B8gkOLZrROkgELsY-QvHERMfVGe1jlVhyC6J6zUpWaHDyhGTkAvI2pvy",
+      "note": null
+    },
+    {
+      "title": "Bulk & Party Orders",
+      "slug": "07-bulk-party-orders",
+      "id": "2c8802f0b68048d2901d554db6a01bdb",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzdmZWVlMDIyZDIyMTRkMzBiZjFmMzA3OWM0OGI4ZmVhEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0ujlUpdJwqnH8v8zhIexJPmJWVaG0QwRuhnDBsq3ZwA6-4UhsiGg3BkxfPW26V1_tdFOxh7dRlcyUzlKMaxwt74Wd-wYAPM5uLLKT-CCDVy6rx70Rzn_A076kV0KqfmF9KWVEwYFoFhq9SU0YeXNtaDOLHOe5OO6BDAH9usg9RATJraRL-63dSZEKjLCvmrYXbb536xCQoF19Q_jqSo7ALBsyIAL0xbSXiUBo1D37fJnmRNBOvp6xlNtOb4h",
+      "note": null
+    },
+    {
+      "title": "Meal Plans - Simple & Bilingual",
+      "slug": "08-meal-plans-bilingual",
+      "id": "e5b8537b8ab949c3a963c1951119555f",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzUwZjYwMjc2ZjQwZDQ1ZTg4OWNhNmFiNzNhZGRhZTU0EgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uia8jJavmWxV_7QQlZFB5QcqLQepYid1TMVpJ0kcid-aWBBWZkAXQ3EJCWQA__jZVjvEbNG4f5-hAS27WdoCeLfZbVWfTlTU4x0JxaUwRPmE8VZAPh0co7aNA0EaNfz6zGQb1y9rxsMryLTXKvcvMa8kM_CgbMjkHxje4Ueri0LdLZqu5-GdcY_IP-KpfPkeWlI2Fs2PQfnMdpRsuRxkktlnsT-eJCraatz_vAYnm02KbeA5uZyvDvf5WQ_",
+      "note": null
+    },
+    {
+      "title": "Party Orders - Simple & Bilingual",
+      "slug": "09-party-orders-bilingual",
+      "id": "61f7b244bf41422ea6aad6582294be3c",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzE5MjRiNjcwMzdjYzQ3Yjk4MjAzODIyMzAwMTExYWYyEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhe3sGSFvb2cyTESZjcWZU0-PPV5jmjvYS30NG7TZ3dmZaczZOne54ENy537ni_qONYGdjm2Ik45FNcD04gXXbNh5Sy_APdeAllKZG6FvVEBdqHEBxCOmRR_aTiY3bYOdpzMSz4EFhYB4KKMMVti3fVYzUjzWn5-yIaAd2QiQyfCxFlcy_4ErW64ozZi15yIqo6-UqLCvRNc_HX7FvL04rKaCmHhcV5NtuKSaEmhEhBvkmUacMzkKTujjlD",
+      "note": null
+    },
+    {
+      "title": "Home Page - Indian Cuisine & Bilingual",
+      "slug": "10-home-indian-cuisine-bilingual",
+      "id": "e56098b9a27a4edeb1a35eba60b4a50c",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2YyMjdkNjIwYTMwNDRiNWJiYzk1YTM1YjBkZmY4ZjkwEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uj5cl4H5HtFMyEeiUb7TUlkX11jlOVcpBIRPy7CpgVCywovmTI0Mz4tGVvcghI1esjmxUFpoIrrtUqyBAGqSYRdTI4bGTSX1sduxFRB59QlujR00VN-Yc0LlhHDS5-yFYwBeogQpMrwEhoS7cFT20nC7l1Xhu3f7J4ymJnKm9-gGDHbqzP_IfOTgwCVp1O_GesT34p6rrMtqTbMkeKBLohx-Lu8ViFI_oi-uPiGjLJsGSRDHRMoOCdbq9x8",
+      "note": null
+    },
+    {
+      "title": "Checkout - Simple & Accessible",
+      "slug": "11-checkout-accessible",
+      "id": "d0074f668395403c92b1c5b05619e8af",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2VjZWQ2MDFkMmNlMTRmOTlhNzk5OWEwOTQ4ZGQxMjZjEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhlrCvlFI2gy3mkPZTP_7pb1ICvuODgIjQ5rtB__Pa34DdN6jM6DUqNshCoOewdP_ShmKvQeF25JyflezqrMzQksmJrp9OH7pfSO-oBOt3wt8EuFmzpBGLdF5S9kD8ZBePQBk35VwnG5PaAhPAMMjj-EvfttfBo5LTOUGNG0KOIlZvliHVT3k9MLaq0D2zbiryhoKBDoD7TSc_czoNy3PNZwBI051dA3VUv78fKCiK1FlNsj-C3SJchwM9X",
+      "note": null
+    },
+    {
+      "title": "Admin Dashboard - Simplified",
+      "slug": "12-admin-dashboard-simplified",
+      "id": "1f9db86c459d474dab455e28edcd336e",
+      "ok": true,
+      "error": null,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzhjODVlMGEwNjQxZjQ5OTI5ZmEwYzlkN2ZiOTU5NTgxEgsSBxCxsOvFthEYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTMwMTg3ODgwMzM5NzMyNzQzOQ&filename=&opi=89354086",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/ADBb0ug_cifhMBsncqlzYu930heOpli7jLW1_LhSVqF0qapDPhxXAkazvELv0sn0fBY7b2imxjlj-dWoOKUPPYZt6kuxyDogTsLDEeDTm47TSY9L4fPHik4ZfGxqmVRXeE2j8I1xE6Jooi27tHNCVJrXtygCvrsRQi8Bx9AUM-elWIMOShh3YU1ZhY2gBsPPNWMAxrjYDm3JxJQYzMO67dnTYkQjnYuCmgcYhI5fNJYJ45B0BbHtbUB1Pn8TXwwH",
+      "note": null
+    }
+  ]
+}

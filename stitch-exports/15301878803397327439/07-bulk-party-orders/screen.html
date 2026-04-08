@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "inverse-primary": "#acd0ad",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdbcf",
+                    "tertiary": "#47541d",
+                    "secondary-fixed-dim": "#ffb59b",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-container-high": "#ebe8e3",
+                    "on-surface": "#1c1c19",
+                    "surface-bright": "#fcf9f4",
+                    "tertiary-container": "#5e6d33",
+                    "on-primary-fixed-variant": "#2f4e33",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffa17f",
+                    "tertiary-fixed": "#d9eaa3",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#4f6f52",
+                    "surface-dim": "#dcdad5",
+                    "surface-variant": "#e5e2dd",
+                    "primary": "#37563b",
+                    "primary-fixed-dim": "#acd0ad",
+                    "on-error": "#ffffff",
+                    "secondary": "#934a2e",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#c8ecc8",
+                    "on-secondary-fixed-variant": "#753319",
+                    "surface-tint": "#466649",
+                    "outline": "#737971",
+                    "on-secondary-container": "#78351b",
+                    "background": "#fcf9f4",
+                    "outline-variant": "#c2c8bf",
+                    "on-background": "#1c1c19",
+                    "on-primary-container": "#ccf0cc",
+                    "on-secondary-fixed": "#380d00",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#bdce89",
+                    "on-tertiary-fixed": "#161f00",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-container": "#ddeea7",
+                    "on-primary-fixed": "#03210b",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "surface-container": "#f0ede8",
+                    "on-surface-variant": "#424841"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(252, 249, 244, 0.7);
+        backdrop-filter: blur(12px);
+      }
+      .primary-gradient-btn {
+        background: linear-gradient(to bottom right, #37563b, #4f6f52);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopNavBar -->
+<nav class="bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-md text-emerald-800 dark:text-emerald-400 font-['Noto_Serif'] font-medium tracking-tight docked full-width top-0 sticky z-50 tonal-shift-bg flat no shadows">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100">The Artisanal Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300" href="#">Daily Menu</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300" href="#">Meal Plans</a>
+<a class="text-emerald-900 dark:text-emerald-100 border-b-2 border-emerald-800 pb-1 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300" href="#">Party Orders</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-300" href="#">Chef Profiles</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined cursor-pointer" data-icon="shopping_basket">shopping_basket</span>
+<span class="material-symbols-outlined cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+<button class="primary-gradient-btn text-on-primary px-6 py-2 rounded-xl text-sm font-medium transition-all active:opacity-80">Order Now</button>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-2xl mx-auto px-8 lg:px-16 pt-12">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2 space-y-6">
+<h1 class="text-6xl font-headline text-primary leading-tight">Elevated Celebrations, <span class="italic">Artfully Served.</span></h1>
+<p class="text-lg text-on-surface-variant max-w-xl">Whether an intimate gathering or a grand milestone, we bring the warmth of our kitchen to your table with curated catering and bespoke at-home services.</p>
+<div class="flex gap-4">
+<a class="primary-gradient-btn text-white px-8 py-4 rounded-xl font-medium text-lg" href="#enquiry-form">Request a Quote</a>
+<button class="flex items-center gap-2 text-secondary font-semibold px-8 py-4 bg-secondary-fixed rounded-xl">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        WhatsApp Us
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl transform rotate-2">
+<img alt="Catering setup" class="w-full h-full object-cover" data-alt="Luxurious long wooden dining table set with white linen, vibrant floral centerpieces, and artisanal gold-rimmed plates in a sunlit garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEvm7MOAQn-56-Em5eAKw-hZc05Wk3M3ePZgPB_CN7px_8YtoTV46fOwiQypb3ldq1Te2MGoVV4GKd9yfVAAqtSxNb_RGAfYvGhxSJLfJyVRYvIRF3k0pTNGZ5SjfNJUfo_ssFV4Fqp0p5JedbvLNMQmdd2kDSv9pXcCF5N1yFG2eUsbIfy_xrBeQI8qbcDS9kob4UgWkNcdVfA2n0cbscrcYZ_e-n_cJbkOY0e1X1IEEgDlf-pPD77Pg43dI6ooNS-ms1-4WJIRfX"/>
+</div>
+<div class="absolute -bottom-8 -left-8 aspect-square w-48 rounded-2xl overflow-hidden shadow-2xl border-8 border-white transform -rotate-3 hidden lg:block">
+<img alt="Plated food" class="w-full h-full object-cover" data-alt="Macro close-up of a beautifully plated appetizer with edible flowers, herb oil droplets, and vibrant beet puree on a ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtrcLtZQk3QSuQWTg8vdB8kLjcEgGJ7NnnJsLOTI-S_6xGgh6-zA1Tqpeg9YsXRmi8lScQtTHUOkgpdvPD7QzVGj_PlvIHB23j2up8-EuJSFMs1iFahF2AZ1fDbUVxQihcOVjpMCb0JDZo76pmmYJqfDpcjateXIoViUt5hO5ND7j9iXUl45hei2nrUHo8aGqmsmc7nFTC3SZocWx0yZhQjfF3VB7_yIeSWrGFZsnzjDW9Qp0GugpS-lMP2b5bt3-j-MZh_sNgbX61"/>
+</div>
+</div>
+</section>
+<!-- Service Types: Bento Grid style -->
+<section class="mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-7 bg-surface-container-low rounded-[2.5rem] p-12 flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10 max-w-md">
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-xs font-label uppercase tracking-widest mb-4 inline-block">Service 01</span>
+<h2 class="text-4xl font-headline text-primary mb-4">Party Catering</h2>
+<p class="text-on-surface-variant mb-8">From corporate luncheons to backyard weddings, we handle the logistics while you enjoy the company. Menu customization is our specialty.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> 20 to 500 Guests</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Live Stations Available</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span> Full Buffet or Pre-packed Options</li>
+</ul>
+</div>
+<div class="md:absolute md:-right-12 md:bottom-0 w-full md:w-1/2 aspect-square rounded-tl-[3rem] overflow-hidden">
+<img alt="Buffet setup" class="w-full h-full object-cover" data-alt="Elegant indoor buffet line with large silver serving trays, rustic bread baskets, and hanging vintage Edison light bulbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmZ3mMr6DuutRoEuaeUwCeg-oZAw4HpJp86cTkE3vKMG7XGe-BQqHz6ts-3I1W1yhO1doKPcgxIEHKpjBzQWBUjxWRfZ86AnnEfzdDsInnPk1h4dpRlQlSe4mvkXJf0-cDQ95DkRQEfuIjKwluYFKpbkaz0kBwj5fhB3vAjSwWG7nOLZpAnSRounTQmaG-FFvaxFkyX3eM-0Hx5KPY6TT3qYlhQB0KYiLorEOnoGKXJ3xUDHA2g0cLeoSLw38pLPjPdlHIrIbDQBCo"/>
+</div>
+</div>
+<div class="md:col-span-5 bg-tertiary text-on-tertiary rounded-[2.5rem] p-12 flex flex-col gap-6">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1 rounded-full text-xs font-label uppercase tracking-widest w-fit">Service 02</span>
+<h2 class="text-4xl font-headline italic">At-Home Service</h2>
+<p class="opacity-80">The ultimate artisanal experience. Our chefs arrive at your kitchen to prepare a multi-course menu live for your guests.</p>
+<div class="mt-auto aspect-video rounded-2xl overflow-hidden">
+<img alt="Chef at home" class="w-full h-full object-cover grayscale brightness-75" data-alt="Professional chef in a clean white uniform meticulously garnishing a dish in a modern domestic kitchen with warm task lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcsQfOQWK6qZ61sXURhb3sL7tFNG4ug-bdWyQK3DZ84yeZVPs9A5hB6aCZOcoHvxDIFvj9tc7lD0dKwCWPdTdP_ayMqA6W5Hs8tqjsa1BzoioRVvkTJa3aT9Nl3wPUxVsx5JPcIng-6q47T68oXJu_KGETIxRyGSXjoAz5spwZ_x19udsdpagnIDAPRbhjV4uctIiQA4c427Y9ZWHI66_7FGNvwTtc3h464U7b9OvFvY2iMugJ22CLhPiUt21G52M09GQQ_8CZRtv5"/>
+</div>
+<button class="w-full py-4 border border-tertiary-fixed/30 rounded-xl font-medium hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-colors">Learn More</button>
+</div>
+</div>
+</section>
+<!-- Previous Catering Gallery -->
+<section class="mb-32">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline text-primary mb-4">Our Gallery of Events</h2>
+<p class="text-on-surface-variant">Moments of connection, beautifully framed by food. See how we've transformed spaces across the city.</p>
+</div>
+<button class="text-primary font-semibold flex items-center gap-2 hover:underline">
+                    View All Projects <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="space-y-4 md:space-y-8">
+<img alt="Gallery" class="w-full rounded-2xl aspect-[3/4] object-cover" data-alt="Close up of artisanal hors d'oeuvres on a dark slate platter, featuring figs, goat cheese, and honey drizzles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgyaJLy9lDf-OiSM6Cc4szKq7yamIN0NGrelHngT9v023zIfN9Red4_9EBpxSVRheU7NKmgInwd7woxxpxZh3WnQoxoCpt9uoMSY3CmXEPjoBL6nSTPaYf5zvvE2EvOBL4ESJn3eoX496Hte2uhWdaXY0wmcvZcNw6U0UzBEIjhdg_Zua6hjAayrgCyzVnz6zKJgP-Sq6pIqv4UCqaNPRSm8rxvcGQRTInh5GdmLa7C1R7XaVMl-cij2s_OfsSnemKbOFHxprvzpah"/>
+<img alt="Gallery" class="w-full rounded-2xl aspect-square object-cover" data-alt="Lively group of people clinking wine glasses over a bountiful table during a sunset rooftop dinner party" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1bcEtWfvqoRoVnlDvqMHZ5-vOG1yDtFUMJcSTm1KCX2x82Wc_K7cKRrquRB9aQHUkgazj7WUr7v7LPbfvAJ3kEjFTPc1gf2J92R1gpP3w56pZSLtopmIgNV-wed1DGlkhLsXOG3USQpT5swBjlMy10_fZ-XM6ee_rn-_HUU2iN2QpXpq-WtHGdC809vnmr5il4Ukgj8LboJisHBX-9oHvPbWw4HRiBcJlaleI8sWUKv9Mwi_bb11_E7YWPXSgixmHT-rOjAhecOr"/>
+</div>
+<div class="space-y-4 md:space-y-8 mt-8">
+<img alt="Gallery" class="w-full rounded-2xl aspect-square object-cover" data-alt="A rustic wooden board with a variety of colorful artisanal cheeses, nuts, and grapes in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARmx-N3D2V6cGFaO3h0THDBZhPx2JgUBAssLWAh_Ql2yBfgbto8fZ0TDxJI5S9DeCBEauUiV2ZJALexgcrHQhzbW11SWgY1DIKgHmuGhRArk0zoMLW9R2JF0ucNvPSw91OqGV4Mak3sw1CygaWiI1EKhZV-lCfoSYZKg4o5Gyq9GU4PQvUZfhyRNAxf0msSbjKSDYnLsPC2A5pFUVLua4bMNko9ESoXtQa5SBU4o3CjB5n2v9XS8QkVIfT0MIUx2I_zBYWlzxLtLop"/>
+<img alt="Gallery" class="w-full rounded-2xl aspect-[3/4] object-cover" data-alt="Blurred background of a festive event with a focus on a beautifully arranged platter of mini desserts and tartlets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ynLHW4GdCYvyfQ1i5VBbIY_2wiudTrgoCvFgCHZLQfMLkRz6M61ghQyF68vEkCbTnMTS2ZG8tKyRCqjF50kv7_T9pPdt-uGnMhpLN2NzaZi6KMkygfI7GUUvH8H4dyr8OiGN61IBY2EjNFeUTi4tXC840Bjm5Jnad-EHaq9ljLtjhK5qOT-_B8HjFXRGUA5-wA4J7_LwKoWDx7cHP1a93LYUuko0Cq2pQm8IYbCagwP9ltcbXAp54nKjOtiNydy7iRL5dUxJ293I"/>
+</div>
+<div class="space-y-4 md:space-y-8">
+<img alt="Gallery" class="w-full rounded-2xl aspect-[3/4] object-cover" data-alt="A chef's hand carving a roasted leg of lamb with fresh rosemary sprigs on a rustic cutting board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGQfgYYbawikyaFwKc_ZiCyXf7D7r48PZUcz87AZKnoMVV_kKwbIg3XZ3vpD2y90lPCgV-FSHnD4Fb762o3HhlSbUTgZRDHqrhwYwNj2LQ1GFPtaKrglqdG1H7yX_3-SPAHH7za-EODHXedShnJ7IiRbYOewJLwPH6pL_IklhqMxGwrjMGJw2lRHDh4PumOkQwMYUAlhyMh6qxZG3JKIdJoF6E2ShThcrniwMOcu40ihBripocdKR-l0r_XHPW82nNo3i9rOSblX0a"/>
+<img alt="Gallery" class="w-full rounded-2xl aspect-square object-cover" data-alt="Multiple thin-crust pizzas with fresh basil and mozzarella sitting on a marble table in a warm restaurant setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmVRSfH1lmyHPJ9F6GT0FSkv65gBUVJkfsF8PVQkYOhcW7imEHk3paXrdQtL3dhJPUwfAN9f4qk9KNFFpWxKEa7GS8FQ0-p6XuOnaBIFwxSTAKDDV_EVbux7deQoCT8TlpkdLV7sZKpZZzJlGF_PUPp6w1OxWUxOBzlenJZmv8EIQ4XvgACnJJtULt8Nu85DZCg0vHMRNauui2N1at9rqSy96d7LG55-i5ijrll1U5JFNUSqswDJGGZF_jj891L1xi6JIu0zppR-WJ"/>
+</div>
+<div class="space-y-4 md:space-y-8 mt-8">
+<img alt="Gallery" class="w-full rounded-2xl aspect-square object-cover" data-alt="Overhead view of a long community table filled with large sharing platters of colorful salads and grilled vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhS7vpkOE6UmkD5GX0TUPAtXlfiv4H1XABPdXcMpDCXHmQwaAP1L7TAOjKLN_ujS0Ctua0kczcvmd7Cx1fjNBo-1VpKmCtQ02dniGUFNxsu6mXB-yudKZlJijWq3wMJggp8qN-CfNKfvgaKpUFyNK49duPVFoM9quwR-m5W4Wn4Q5U9Q7miZROCU2TED8hyvsfTk--A1dAOHVEQeybf2ayzE5ZVJ29PrzOMvNMdbgeACRxvHSsHcRXyUTzYGNqFUViUQZomVfRWSZD"/>
+<img alt="Gallery" class="w-full rounded-2xl aspect-[3/4] object-cover" data-alt="A sophisticated outdoor wedding reception set with white chairs and long tables under draped white fabric canopies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgnZSlaoLF_MtSJOrUwAPAhETIoFGyiU2iqWKNRMGwbwjHoN9Fnf8B3gFkQXV8VTukJUqwevF3Sn5FmlOeFZnhyvx4uqJJxf2u6AK5C1hnlOXpxQyZTJd0M14fe9kiNxiMHHxZUad0GwNUMgJ5ItN2OClkX30RGo_RZwcUgx5oYbQkQ00IxtsT5SCjI4pNtDgopRXLV2uyZymcLgieKi7b8HymON6y9bXC-YGR0vFEzsvPL-a2Hm9TtQCtM2RNqK3FmFvDPzRwSo1A"/>
+</div>
+</div>
+</section>
+<!-- Enquiry Form -->
+<section class="mb-32" id="enquiry-form">
+<div class="bg-surface-container-high rounded-[3rem] p-8 md:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-headline text-primary mb-4">Start Planning Your Event</h2>
+<p class="text-on-surface-variant text-lg">Tell us a bit about your celebration, and our event concierge will get back to you with a curated proposal within 24 hours.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Full Name</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" placeholder="e.g. Julianne Smith" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Email Address</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" placeholder="julianne@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Event Occasion</label>
+<select class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Wedding Reception</option>
+<option>Corporate Event</option>
+<option>Birthday Celebration</option>
+<option>Intimate Dinner Party</option>
+<option>Other</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Guest Count</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" placeholder="20" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Event Date</label>
+<input class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" type="date"/>
+</div>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label text-sm text-primary font-semibold ml-1">Dietary Requirements &amp; Notes</label>
+<textarea class="w-full bg-surface-variant border-none rounded-t-xl py-4 px-6 focus:ring-2 focus:ring-primary/20" placeholder="Vegan, Gluten-free options needed, specific allergies, or special requests..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex flex-col items-center gap-6 mt-8">
+<button class="primary-gradient-btn text-white px-12 py-5 rounded-full font-bold text-xl shadow-lg shadow-primary/20 w-full md:w-auto" type="submit">Request a Quote</button>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="lock">lock</span>
+                                Your details are safe with us. We only use them to contact you about this event.
+                            </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 font-['Plus_Jakarta_Sans'] text-sm tracking-wide full-width mt-20 pt-16 pb-8 tonal shift using surface-container-low flat">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 max-w-screen-xl mx-auto">
+<div class="space-y-4">
+<div class="font-serif text-lg text-emerald-900 dark:text-emerald-100">The Artisanal Hearth</div>
+<p class="text-stone-500 dark:text-stone-500">Bringing the craft of the hearth to every table. Hand-made, locally sourced, intentionally prepared.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-bold text-emerald-800 dark:text-emerald-400">Quick Links</h4>
+<div class="flex flex-col space-y-2">
+<a class="text-stone-500 dark:text-stone-500 hover:text-terracotta-600 dark:hover:text-orange-400 ease-in-out duration-200" href="#">Contact Us</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-terracotta-600 dark:hover:text-orange-400 ease-in-out duration-200" href="#">About Our Chefs</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-terracotta-600 dark:hover:text-orange-400 ease-in-out duration-200" href="#">Admin Dashboard</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-terracotta-600 dark:hover:text-orange-400 ease-in-out duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-emerald-800 dark:text-emerald-400">Join Our Hearth</h4>
+<p class="text-stone-500 dark:text-stone-500">Subscribe for seasonal menu launches and exclusive event invitations.</p>
+<div class="flex">
+<input class="bg-surface border-none rounded-l-lg px-4 py-2 w-full" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-r-lg">Join</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center border-t border-stone-200 dark:border-stone-800 pt-8 text-stone-500">
+            © 2024 The Artisanal Hearth. Made with intention.
+        </div>
+</footer>
+<!-- WhatsApp Floating Action -->
+<div class="fixed bottom-8 right-8 z-50">
+<a class="bg-primary hover:bg-primary-container text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat with our Chef</span>
+</a>
+</div>
+</body></html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Home Hearth | Fresh Home-Cooked Tiffin Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#31302d",
+                    "inverse-primary": "#acd0ad",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdbcf",
+                    "tertiary": "#47541d",
+                    "secondary-fixed-dim": "#ffb59b",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-container-high": "#ebe8e3",
+                    "on-surface": "#1c1c19",
+                    "surface-bright": "#fcf9f4",
+                    "tertiary-container": "#5e6d33",
+                    "on-primary-fixed-variant": "#2f4e33",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffa17f",
+                    "tertiary-fixed": "#d9eaa3",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2d4a2f",
+                    "surface-dim": "#dcdad5",
+                    "surface-variant": "#e5e2dd",
+                    "primary": "#1b3a20", /* Darkened for better contrast */
+                    "primary-fixed-dim": "#acd0ad",
+                    "on-error": "#ffffff",
+                    "secondary": "#853a1f", /* Darkened for better contrast */
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#c8ecc8",
+                    "on-secondary-fixed-variant": "#753319",
+                    "surface-tint": "#466649",
+                    "outline": "#737971",
+                    "on-secondary-container": "#78351b",
+                    "background": "#fcf9f4",
+                    "outline-variant": "#c2c8bf",
+                    "on-background": "#1c1c19",
+                    "on-primary-container": "#ccf0cc",
+                    "on-secondary-fixed": "#380d00",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#bdce89",
+                    "on-tertiary-fixed": "#161f00",
+                    "inverse-on-surface": "#f3f0eb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f3ee",
+                    "on-tertiary-container": "#ddeea7",
+                    "on-primary-fixed": "#03210b",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "surface-container": "#f0ede8",
+                    "on-surface-variant": "#424841"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(252, 249, 244, 1) 40%, rgba(252, 249, 244, 0.4) 100%);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcf9f4;
+            color: #1c1c19;
+            font-size: 16px; /* Base accessibility size */
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        .lang-switcher button {
+            transition: all 0.2s ease;
+        }
+        .lang-active {
+            font-weight: 700;
+            color: #1b3a20;
+            border-bottom: 2px solid #1b3a20;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-stone-50/90 backdrop-blur-md sticky top-0 z-50 w-full border-b border-stone-200">
+<div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif italic font-bold text-emerald-950">The Home Hearth</div>
+<div class="hidden md:flex items-center gap-6 font-['Noto_Serif'] font-medium">
+<a class="text-emerald-950 border-b-2 border-emerald-900 pb-1" href="#">Daily Menu</a>
+<a class="text-stone-700 hover:text-emerald-800 transition-colors" href="#">Meal Plans</a>
+<a class="text-stone-700 hover:text-emerald-800 transition-colors" href="#">Party Orders</a>
+<a class="text-stone-700 hover:text-emerald-800 transition-colors" href="#">Our Cooks</a>
+</div>
+<div class="flex items-center gap-4 lg:gap-6">
+<!-- Language Switcher -->
+<div class="flex items-center gap-2 text-sm border-r border-stone-300 pr-4 lang-switcher">
+<button class="lang-active px-1">English</button>
+<span class="text-stone-300">|</span>
+<button class="text-stone-500 hover:text-emerald-900 px-1">हिंदी</button>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Shopping Basket" class="material-symbols-outlined text-emerald-900 text-2xl" data-icon="shopping_basket">shopping_basket</button>
+<button aria-label="User Account" class="material-symbols-outlined text-emerald-900 text-2xl" data-icon="account_circle">account_circle</button>
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-emerald-800 transition-all">Order Now</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[600px] md:h-[750px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Fresh Indian Thali" class="w-full h-full object-cover object-center" data-alt="A vibrant and colorful traditional Indian Thali featuring bowls of dal, vegetable curry, rice, roti, and pickles on a brass plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4OGpW_fLwfGi1Ams-ETSn0GpCcz8a5FUeAXAEoUB37JV-DfCF6sNPkZHLr7tvYpu76GO2WaWVtYMFygYktGwt5I9PLK4IsjPWHj5phAv1bh-dVd0EUKPDg7tJZeavu7qZ7S-KjUqvb1mSri-PWLmwG1ikOwV_HyZ8Qxgp5FNJmMfIgY3og2nLDmol8b4pNCkVO_eKrG2hzKigcuZUow3lSZRhdJ2Dw2WYdJZPRTOk7bOoP8ZzWNh0stBD4UiEmgAw0D1pPfOL19S8"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+<div class="max-w-xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-sm font-bold tracking-wide mb-6">Home-Cooked • Fresh • Daily</span>
+<h1 class="text-5xl md:text-7xl font-serif text-primary leading-[1.2] mb-6">Real food, <br/><span class="italic text-secondary">made for you.</span></h1>
+<p class="text-xl text-stone-800 font-body mb-8 max-w-lg leading-relaxed font-medium">
+                Enjoy the taste of home every day. We deliver fresh, healthy meals made from traditional family recipes straight to your door.
+            </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all">View Today's Menu</button>
+<button class="flex items-center gap-3 text-secondary px-8 py-4 rounded-xl font-bold border-2 border-secondary/20 hover:bg-secondary-fixed/30 transition-colors">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                    Our Story
+                </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Daily Special Section -->
+<section class="py-20 px-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-serif text-primary mb-3">आज का खास खाना <br/><span class="italic text-3xl">(Today's Special)</span></h2>
+<p class="text-stone-700 text-lg">Freshly made this morning by our home cooks. Order by 1:00 PM for lunch.</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label text-stone-600 mb-1 uppercase tracking-wider font-bold">Available Today</p>
+<p class="text-2xl font-serif text-secondary font-bold">Wednesday, Oct 24th</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 bg-surface-container-high rounded-3xl overflow-hidden shadow-sm">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Traditional Tiffin Meal" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Close up of stainless steel tiffin carriers stacked with steaming hot dal, okra fry, and fresh basmati rice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbT_5nN-bECVeNC8xlR9OUC7eQad4M5bYzqPGaN1Z9L2f6ZR0KjEeVN8C8EB2PqNexBTFSM-KY43KoKZRn5WdcSW4Z_CK3FBspGraUJ4cSZmMQCt4ux_9QCMC2TCjUxs0Zm5fq0aGEcXjMp-jijD9_EBvM8jbgaFK7IOPb8RAM0tykia-vrA_ZUeWetKraTDbAiF5GKV1U5GMteo0DFXspbIldqE9NHyMQB88wQb5w1KfFhP-c5OuHuxHf8QQjsIzsb04qwkSVoOWr"/>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-6">
+<div>
+<h3 class="text-4xl font-serif text-emerald-950 mb-3">Homestyle Dal &amp; Seasonal Sabzi</h3>
+<p class="text-lg text-stone-700 leading-relaxed">A hearty meal featuring slow-cooked yellow lentils with cumin tadka, fresh seasonal vegetables, and two soft rotis. Just like Mom makes it.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<div class="px-4 py-2 rounded-lg bg-emerald-100 text-emerald-900 font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+                    High Protein
+                </div>
+<div class="px-4 py-2 rounded-lg bg-stone-200 text-stone-800 font-bold text-sm">
+                    Serves 1
+                </div>
+<div class="px-4 py-2 rounded-lg bg-orange-100 text-orange-900 font-bold text-sm">
+                    Less Oil
+                </div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl border border-stone-200">
+<h4 class="text-xs font-bold uppercase tracking-widest text-emerald-900 mb-4">What's Inside:</h4>
+<ul class="grid grid-cols-2 gap-y-3 gap-x-4">
+<li class="flex items-center gap-2 text-sm font-medium text-stone-800">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Yellow Moong Dal
+                    </li>
+<li class="flex items-center gap-2 text-sm font-medium text-stone-800">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Fresh Bhindi Fry
+                    </li>
+<li class="flex items-center gap-2 text-sm font-medium text-stone-800">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 2 Whole Wheat Rotis
+                    </li>
+<li class="flex items-center gap-2 text-sm font-medium text-stone-800">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Steamed Rice
+                    </li>
+</ul>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="text-4xl font-serif text-primary font-bold">₹180</span>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-emerald-800 shadow-md active:scale-95 transition-all">
+                    Add to Tiffin
+                    <span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="bg-stone-100 py-24">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl md:text-5xl font-serif text-emerald-950 mb-4 italic">यह कैसे काम करता है <br/><span class="text-3xl">(How It Works)</span></h2>
+<p class="text-stone-700 text-lg">Getting fresh food is easy. Choose your plan and enjoy home-cooked meals every day.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center space-y-6">
+<div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm border border-stone-200">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="text-2xl font-serif text-primary font-bold">1. Pick a Plan</h3>
+<p class="text-stone-700 leading-relaxed font-medium">Choose a single meal or a weekly subscription that fits your schedule.</p>
+</div>
+<div class="text-center space-y-6">
+<div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm border border-stone-200">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="outdoor_grill">outdoor_grill</span>
+</div>
+<h3 class="text-2xl font-serif text-primary font-bold">2. Freshly Cooked</h3>
+<p class="text-stone-700 leading-relaxed font-medium">Our cooks buy fresh ingredients and cook your meal with love every morning.</p>
+</div>
+<div class="text-center space-y-6">
+<div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm border border-stone-200">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="delivery_dining">delivery_dining</span>
+</div>
+<h3 class="text-2xl font-serif text-primary font-bold">3. Hot Delivery</h3>
+<p class="text-stone-700 leading-relaxed font-medium">Your tiffin arrives warm at your home or office, ready to eat.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Your Cook & Contact -->
+<section class="py-24 px-8 max-w-screen-xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 space-y-8">
+<div>
+<h2 class="text-4xl font-serif text-emerald-950 mb-6">Meet Grandma Geeta</h2>
+<p class="text-stone-800 text-xl leading-relaxed mb-6 font-medium">
+                    "I have been cooking for my family for 40 years. For me, feeding people is a way to show love. I use the same spices and recipes I use for my own grandchildren."
+                </p>
+<p class="text-stone-700 text-lg leading-relaxed">
+                    Geeta is one of our 20+ neighborhood home cooks who bring the authentic taste of Indian kitchens to your table every day.
+                </p>
+</div>
+<div class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 flex flex-col sm:flex-row items-center gap-8">
+<div class="bg-white p-4 rounded-xl shadow-md">
+<div class="w-24 h-24 bg-stone-100 flex flex-col items-center justify-center text-stone-400 border-2 border-dashed border-stone-300 rounded-lg">
+<span class="material-symbols-outlined text-4xl mb-1" data-icon="qr_code_2">qr_code_2</span>
+<span class="text-[8px] font-bold uppercase tracking-widest text-center">Chat with Us</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-emerald-950 text-lg mb-2">Want to customize your meal?</h4>
+<p class="text-sm text-stone-700 mb-4 leading-normal font-medium">Scan to chat on WhatsApp. We can adjust spice levels or remove certain ingredients for you.</p>
+<a class="inline-flex items-center gap-2 text-emerald-800 font-bold hover:underline" href="https://wa.me/1234567890">
+                        Message us on WhatsApp
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
+<img alt="Our Home Cook" class="w-full h-full object-cover" data-alt="A warm, smiling Indian woman in her late 50s wearing a simple cotton saree and an apron, standing in a clean and bright home kitchen with jars of spices behind her" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf8ZmblvUrpJfpldisAcXNLhxSno0muOFeoGgaUHq-hFiNKswq0xRJYXksGEncAKuHtwLyejbLs24mVQPRnOrCu4E4LiW21xaR41xJXtKfHv-Z2wmgD3AIkFR5quHDUb3J7Rv1z4eql-W-ZcU4v1jJvkc0lgLj273eyyQqTb9jdNZVFg4z3gDhJrthd84DaqNTdHP-BKfUeiHJanzWgldPRfoCR3cGtqXLn-VqJpjAXz-F57sjtmcXKC_RwAuOAh12RCAPP1g-M82Y"/>
+</div>
+<div class="absolute -bottom-4 -left-4 w-24 h-24 bg-secondary-fixed rounded-full -z-10 opacity-40"></div>
+<div class="absolute -top-4 -right-4 w-32 h-32 bg-emerald-200 rounded-full -z-10 opacity-30"></div>
+</div>
+</div>
+</section>
+<!-- Simple CTA Section -->
+<section class="max-w-screen-xl mx-auto px-8 mb-24">
+<div class="bg-emerald-950 rounded-[2.5rem] p-12 md:p-16 text-center relative overflow-hidden">
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Ready for a better lunch?</h2>
+<p class="text-emerald-50/80 text-lg mb-10 font-medium">Join 500+ neighbors who enjoy fresh, home-cooked food every day. No more oily restaurant takeout.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-transform">Start Your Plan</button>
+<button class="bg-transparent border-2 border-emerald-700 text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-emerald-900 transition-colors">Gift a Meal</button>
+</div>
+</div>
+</div>
+</section>
+<!-- WhatsApp Support -->
+<div class="fixed bottom-6 right-6 z-[100]">
+<button aria-label="Chat with Support" class="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-stone-100 border-t border-stone-200 pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 md:px-12 max-w-screen-xl mx-auto text-sm">
+<div class="space-y-6">
+<div class="font-serif text-2xl font-bold text-emerald-950">The Home Hearth</div>
+<p class="text-stone-600 max-w-xs leading-relaxed font-medium">Bringing back the simple joy of home-cooked meals, made with fresh ingredients and traditional care.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="public">public</span>
+<span class="material-symbols-outlined text-emerald-900" data-icon="local_florist">local_florist</span>
+<span class="material-symbols-outlined text-emerald-900" data-icon="eco">eco</span>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-emerald-900 uppercase tracking-widest text-xs">Explore</h4>
+<ul class="space-y-3 font-medium">
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Our Cooks</a></li>
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Meal Subscriptions</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-emerald-900 uppercase tracking-widest text-xs">Legal</h4>
+<ul class="space-y-3 font-medium">
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Terms of Use</a></li>
+<li><a class="text-stone-600 hover:text-emerald-900 transition-colors" href="#">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-xl mx-auto px-8 md:px-12 mt-16 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-stone-500 text-xs font-bold">© 2024 The Home Hearth. Fresh food, every day.</p>
+<div class="flex gap-6 text-xs font-bold text-stone-600">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Fresh Ingredients</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="recycling">recycling</span> Eco-friendly Tiffins</span>
+</div>
+</div>
+</footer>
+</body></html>

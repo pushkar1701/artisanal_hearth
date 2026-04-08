@@ -1,0 +1,179 @@
+{
+  "createTime": "2026-04-08T19:33:05.229005Z",
+  "designTheme": {
+    "bodyFont": "PLUS_JAKARTA_SANS",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#4F6F52",
+    "designMd": "# Design System Document: The Artisanal Hearth\n\n## 1. Overview & Creative North Star\n**Creative North Star: \"The Modern Agrarian\"**\n\nThis design system moves away from the sterile, high-speed aesthetic of typical food delivery apps. Instead, it leans into a \"High-End Editorial\" experience that mirrors the slow, intentional process of home-cooked meals. We break the \"template\" look by utilizing intentional asymmetry, generous whitespace, and a \"paper-on-paper\" layering technique. By avoiding harsh grids and standard borders, we create a digital space that feels as warm and inviting as a sun-drenched kitchen.\n\n## 2. Colors & Tonal Depth\nOur palette is rooted in the earth. It uses deep forest greens to signal health and soft terracotta to evoke the warmth of a tiffin container.\n\n### The \"No-Line\" Rule\n**Explicit Instruction:** Traditional 1px solid borders are strictly prohibited for sectioning. Boundaries must be defined solely through background color shifts. For instance, a `surface-container-low` section should sit directly against a `surface` background to define its territory.\n\n### Surface Hierarchy & Nesting\nTreat the UI as a physical stack of fine, organic papers. \n- Use `surface` as your base \"tabletop.\"\n- Use `surface-container-low` for large content blocks.\n- Use `surface-container-highest` or `surface-container-lowest` for nested cards to create depth without shadows.\n\n### The \"Glass & Gradient\" Rule\nTo elevate the \"Artisanal\" feel, use Glassmorphism for floating navigation bars or \"Quick Add\" overlays. Use `surface` with a 70% opacity and a `20px` backdrop blur. \n**Signature Textures:** Apply a subtle linear gradient from `primary` (#37563b) to `primary-container` (#4f6f52) on main Call-to-Actions to give them a three-dimensional, \"organic\" soul.\n\n## 3. Typography\nThe type scale balances the authoritative beauty of a serif with the functional clarity of a modern sans-serif.\n\n| Level | Font Family | Size | Intent |\n| :--- | :--- | :--- | :--- |\n| **Display-lg** | Noto Serif | 3.5rem | Hero moments; editorial storytelling. |\n| **Headline-md** | Noto Serif | 1.75rem | Section headers; artisanal dish names. |\n| **Title-lg** | Plus Jakarta Sans | 1.375rem | Card titles; navigation anchors. |\n| **Body-lg** | Plus Jakarta Sans | 1rem | Main descriptions; high readability. |\n| **Label-md** | Plus Jakarta Sans | 0.75rem | Nutritional badges; metadata. |\n\n**Creative Note:** Use `Noto Serif` for all brand-heavy moments. The \"friendly serif\" should feel like a masthead of a boutique food magazine.\n\n## 4. Elevation & Depth\nWe eschew heavy \"material\" shadows in favor of **Tonal Layering**.\n\n- **The Layering Principle:** Depth is achieved by stacking. A `surface-container-lowest` card placed on a `surface-container-low` background creates a natural lift that feels sophisticated and tactile.\n- **Ambient Shadows:** If a floating element (like a WhatsApp button) requires a shadow, use a highly diffused blur (32px+) at 6% opacity. Use a tint of `on-surface` (#1c1c19) rather than pure black.\n- **The \"Ghost Border\":** If a boundary is required for accessibility in input fields, use the `outline-variant` token at 20% opacity. Never use 100% opaque borders.\n\n## 5. Components\n\n### Buttons\n- **Primary:** Gradient fill (`primary` to `primary-container`), white text, `xl` (1.5rem) rounded corners.\n- **Secondary:** `secondary` (#934a2e) text on `secondary-fixed` (#ffdbcf) background. No border.\n- **Tertiary:** `primary` text, no background, `label-md` uppercase with 0.05em tracking.\n\n### Food Cards & Nutritional Badges\n- **Cards:** Forbid divider lines. Use `vertical white space` (24px - 32px) to separate elements. Use `surface-container-high` for the card background.\n- **Nutritional Badges:** Use `tertiary-container` (#5e6d33) with `on-tertiary-container` text. Apply `full` (9999px) roundness to create \"pill\" shapes that feel like organic pebbles.\n\n### WhatsApp Contact Section\n- **The Floating Action:** A glassmorphic circle using `primary` at 90% opacity with a white icon.\n- **The Contextual Bar:** A `surface-container-lowest` banner at the bottom of the screen with a `secondary` terracotta accent line (2px) at the very top to draw the eye.\n\n### Input Fields\n- Use `surface-variant` for the background fill. Soften the top-left and top-right corners with `md` (0.75rem) and keep the bottom flat to imply the field is \"resting\" on the page.\n\n## 6. Do's and Don'ts\n\n### Do:\n- **Asymmetric Layouts:** Place food photography slightly off-center, overlapping with `headline-lg` text to create an editorial feel.\n- **Macro Photography:** Use high-resolution, warm-toned images of ingredients. The design system relies on the \"Texture\" of the food to provide visual interest.\n- **Negative Space:** Allow sections to breathe. Use at least 80px of vertical padding between major homepage sections.\n\n### Don't:\n- **No Harsh Lines:** Never use pure black (#000000) or high-contrast 1px dividers.\n- **No Rigid Grids:** Avoid the \"three-column-box\" look. Vary the widths of your containers to make the page feel curated, not generated.\n- **No Standard Icons:** Use thin-stroke, custom-drawn icons that match the \"Artisanal\" weight of Noto Serif.",
+    "font": "NOTO_SERIF",
+    "headlineFont": "NOTO_SERIF",
+    "labelFont": "PLUS_JAKARTA_SANS",
+    "namedColors": {
+      "background": "#fcf9f4",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#f3f0eb",
+      "inverse_primary": "#acd0ad",
+      "inverse_surface": "#31302d",
+      "on_background": "#1c1c19",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#ccf0cc",
+      "on_primary_fixed": "#03210b",
+      "on_primary_fixed_variant": "#2f4e33",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#78351b",
+      "on_secondary_fixed": "#380d00",
+      "on_secondary_fixed_variant": "#753319",
+      "on_surface": "#1c1c19",
+      "on_surface_variant": "#424841",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#ddeea7",
+      "on_tertiary_fixed": "#161f00",
+      "on_tertiary_fixed_variant": "#3e4c16",
+      "outline": "#737971",
+      "outline_variant": "#c2c8bf",
+      "primary": "#37563b",
+      "primary_container": "#4f6f52",
+      "primary_fixed": "#c8ecc8",
+      "primary_fixed_dim": "#acd0ad",
+      "secondary": "#934a2e",
+      "secondary_container": "#ffa17f",
+      "secondary_fixed": "#ffdbcf",
+      "secondary_fixed_dim": "#ffb59b",
+      "surface": "#fcf9f4",
+      "surface_bright": "#fcf9f4",
+      "surface_container": "#f0ede8",
+      "surface_container_high": "#ebe8e3",
+      "surface_container_highest": "#e5e2dd",
+      "surface_container_low": "#f6f3ee",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#dcdad5",
+      "surface_tint": "#466649",
+      "surface_variant": "#e5e2dd",
+      "tertiary": "#47541d",
+      "tertiary_container": "#5e6d33",
+      "tertiary_fixed": "#d9eaa3",
+      "tertiary_fixed_dim": "#bdce89"
+    },
+    "overrideNeutralColor": "#F5F2ED",
+    "overridePrimaryColor": "#4F6F52",
+    "overrideSecondaryColor": "#D27C5C",
+    "overrideTertiaryColor": "#8A9A5B",
+    "roundness": "ROUND_EIGHT",
+    "spacingScale": 3
+  },
+  "deviceType": "DESKTOP",
+  "metadata": {
+    "userRole": "OWNER"
+  },
+  "name": "projects/15301878803397327439",
+  "origin": "STITCH",
+  "projectType": "TEXT_TO_UI_PRO",
+  "screenInstances": [
+    {
+      "height": 1927,
+      "id": "1f9db86c459d474dab455e28edcd336e",
+      "sourceScreen": "projects/15301878803397327439/screens/1f9db86c459d474dab455e28edcd336e",
+      "width": 1280,
+      "x": 5376,
+      "y": 4582
+    },
+    {
+      "height": 3965,
+      "id": "2c8802f0b68048d2901d554db6a01bdb",
+      "sourceScreen": "projects/15301878803397327439/screens/2c8802f0b68048d2901d554db6a01bdb",
+      "width": 1280,
+      "x": 10432
+    },
+    {
+      "height": 1951,
+      "id": "3f549208ec2947e5a90c9ad8419f0d43",
+      "sourceScreen": "projects/15301878803397327439/screens/3f549208ec2947e5a90c9ad8419f0d43",
+      "width": 1280,
+      "x": 7744
+    },
+    {
+      "height": 2724,
+      "id": "61f7b244bf41422ea6aad6582294be3c",
+      "sourceScreen": "projects/15301878803397327439/screens/61f7b244bf41422ea6aad6582294be3c",
+      "width": 1280,
+      "x": 1344,
+      "y": 4582
+    },
+    {
+      "height": 4365,
+      "id": "902950ae103b44e6a68ac9e8c0ecbb28",
+      "sourceScreen": "projects/15301878803397327439/screens/902950ae103b44e6a68ac9e8c0ecbb28",
+      "width": 1280,
+      "x": 5053
+    },
+    {
+      "height": 2617,
+      "id": "90aa0a2f534d40bfb1a0a75f1518178e",
+      "sourceScreen": "projects/15301878803397327439/screens/90aa0a2f534d40bfb1a0a75f1518178e",
+      "width": 1280,
+      "x": 6400
+    },
+    {
+      "height": 1794,
+      "id": "a203036c88a54b7a97327aca8d1636c1",
+      "sourceScreen": "projects/15301878803397327439/screens/a203036c88a54b7a97327aca8d1636c1",
+      "width": 1280,
+      "x": 9088
+    },
+    {
+      "height": 540,
+      "id": "assets-7621a7147b66481fbe4b326095265e62-1775676815977",
+      "sourceAsset": "assets/7621a7147b66481fbe4b326095265e62",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960
+    },
+    {
+      "height": 1798,
+      "id": "d0074f668395403c92b1c5b05619e8af",
+      "sourceScreen": "projects/15301878803397327439/screens/d0074f668395403c92b1c5b05619e8af",
+      "width": 1280,
+      "x": 4032,
+      "y": 4582
+    },
+    {
+      "height": 4326,
+      "id": "db811ed6976c433f9435f1c934d267c1",
+      "sourceScreen": "projects/15301878803397327439/screens/db811ed6976c433f9435f1c934d267c1",
+      "width": 1280,
+      "x": 1021
+    },
+    {
+      "height": 3899,
+      "id": "e56098b9a27a4edeb1a35eba60b4a50c",
+      "sourceScreen": "projects/15301878803397327439/screens/e56098b9a27a4edeb1a35eba60b4a50c",
+      "width": 1280,
+      "x": 2688,
+      "y": 4582
+    },
+    {
+      "height": 2842,
+      "id": "e5b8537b8ab949c3a963c1951119555f",
+      "sourceScreen": "projects/15301878803397327439/screens/e5b8537b8ab949c3a963c1951119555f",
+      "width": 1280,
+      "y": 4582
+    },
+    {
+      "height": 1994,
+      "id": "f36ec84a3c494943b321ee6283ea4336",
+      "sourceScreen": "projects/15301878803397327439/screens/f36ec84a3c494943b321ee6283ea4336",
+      "width": 1280,
+      "x": 2365
+    }
+  ],
+  "thumbnailScreenshot": {
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uhi8bU6flemCcEl1d-HNNqcF5Qt9Pi5yDr4WPNQ8ErB2Hwx-HHTSfEhl8SdN0UK7A2Z9lTgp2VTw3_KWU3E5XP0OUQduXma6MklyGSptz94PFBlh5q7WPs8bBWMtGFLUfMxo0fuwrRG1j2ODawZcZzfkT76ksgtI48w6xQTVlkmM-m48gKDQ5Zzz8jIXveuCZagE5FYTrbli5qfKwtSne0RIskRFTjGGlrGse2VCSgBK2wL__d9vBKb7V1r",
+    "name": "projects/15301878803397327439/files/14121d6bcd1c40c2aafac52fa2f2c7cf"
+  },
+  "title": "Tiffin Delivery System",
+  "updateTime": "2026-04-08T19:44:19.754108Z",
+  "visibility": "PRIVATE"
+}
