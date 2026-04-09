@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteFooter } from "@/components/artisan/SiteFooter";
 import { SiteHeader } from "@/components/artisan/SiteHeader";
 import { WhatsAppFab } from "@/components/artisan/WhatsAppFab";
+import { Analytics } from "@vercel/analytics/next";
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <div className="flex flex-1 flex-col">{children}</div>
         <SiteFooter />
         <WhatsAppFab />
+        <Analytics />
       </body>
     </html>
   );
