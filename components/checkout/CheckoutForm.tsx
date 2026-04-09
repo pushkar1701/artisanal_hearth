@@ -1,18 +1,62 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 import { Icon } from "@/components/artisan/Icon";
+import { CART_KEY, cartSubtotal, type CartItem } from "@/lib/cart";
 import { PHONE_DISPLAY } from "@/lib/contact";
 import { distanceKm, getKitchenCoords, quoteDelivery } from "@/lib/delivery";
 import { isSameDayDelivery, tomorrowDateString, todayDateString } from "@/lib/order-dates";
 
 export function CheckoutForm() {
   const minDate = tomorrowDateString();
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [deliveryDate, setDeliveryDate] = useState(minDate);
+  const [deliveryWindow, setDeliveryWindow] = useState("12:00–2:00 PM");
   const [bulk, setBulk] = useState(false);
   const [porterQuoteInr, setPorterQuoteInr] = useState("");
   const [geoStatus, setGeoStatus] = useState<string | null>(null);
   const [distanceKmVal, setDistanceKmVal] = useState<number | null>(null);
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [notes, setNotes] = useState("");
+  const [upiRef, setUpiRef] = useState("");
+  const [placing, setPlacing] = useState(false);
+  const [submitMsg, setSubmitMsg] = useState<string | null>(null);
+  const [chefWhatsAppUrl, setChefWhatsAppUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(CART_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw) as CartItem[];
+      if (Array.isArray(parsed)) setCart(parsed);
+    } catch {
+      setCart([]);
+    }
+  }, []);
+
+  function saveCart(next: CartItem[]) {
+    setCart(next);
+    localStorage.setItem(CART_KEY, JSON.stringify(next));
+  }
+
+  function inc(itemId: string) {
+    const next = cart.map((item) =>
+      item.id === itemId
+        ? { ...item, quantity: Math.min(item.quantityAvailable, item.quantity + 1) }
+        : item
+    );
+    saveCart(next);
+  }
+
+  function dec(itemId: string) {
+    const next = cart
+      .map((item) => (item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item))
+      .filter((item) => item.quantity > 0);
+    saveCart(next);
+  }
 
   const quote = useMemo(() => {
     if (distanceKmVal == null) return null;
@@ -20,16 +64,28 @@ export function CheckoutForm() {
     return quoteDelivery(distanceKmVal, bulk, pq && !Number.isNaN(pq) ? pq : undefined);
   }, [distanceKmVal, bulk, porterQuoteInr]);
 
+  const itemsSubtotalInr = useMemo(() => cartSubtotal(cart), [cart]);
+  const deliveryFeeInr = useMemo(() => {
+    if (!quote || !quote.ok) return 0;
+    if (quote.requiresPorterQuote) return Number(porterQuoteInr || 0) || 0;
+    return quote.feeInr;
+  }, [quote, porterQuoteInr]);
+  const grandTotalInr = itemsSubtotalInr + deliveryFeeInr;
+
   const deliveryFeeDisplay = useMemo(() => {
     if (!quote || !quote.ok) return null;
     if (quote.requiresPorterQuote) return "Enter Porter quote below";
-    return quote.feeInr === 0 ? "Free" : `₹${quote.feeInr}`;
+    return quote.feeInr === 0 ? "Free" : `Rs ${quote.feeInr}`;
   }, [quote]);
 
   const sameDaySelected = isSameDayDelivery(deliveryDate);
 
   const canSubmit =
+    cart.length > 0 &&
     !sameDaySelected &&
+    fullName.trim().length > 1 &&
+    phone.trim().length >= 8 &&
+    address.trim().length > 5 &&
     distanceKmVal != null &&
     quote != null &&
     quote.ok &&
@@ -56,6 +112,54 @@ export function CheckoutForm() {
       },
       { enableHighAccuracy: true, timeout: 15000 }
     );
+  }
+
+  async function placeOrder() {
+    if (!canSubmit || placing) return;
+    setSubmitMsg(null);
+    setChefWhatsAppUrl(null);
+    setPlacing(true);
+    try {
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: fullName,
+          phone,
+          address,
+          notes,
+          deliveryDate,
+          deliveryWindow,
+          distanceKm: distanceKmVal,
+          isBulk: bulk,
+          deliveryFeeInr,
+          itemsSubtotalInr,
+          totalInr: grandTotalInr,
+          paymentMethod: "upi",
+          upiReference: upiRef,
+          items: cart.map((item) => ({
+            id: item.id,
+            name: item.name,
+            priceInr: item.priceInr,
+            quantity: item.quantity,
+          })),
+        }),
+      });
+
+      const data = (await response.json()) as { ok: boolean; error?: string; orderId?: string; whatsappNotifyUrl?: string };
+      if (!response.ok || !data.ok) {
+        setSubmitMsg(data.error || "Order could not be placed. Please try again.");
+        return;
+      }
+      localStorage.removeItem(CART_KEY);
+      setCart([]);
+      setSubmitMsg(`Order placed successfully. Order ID: ${data.orderId}`);
+      setChefWhatsAppUrl(data.whatsappNotifyUrl || null);
+    } catch {
+      setSubmitMsg("Order could not be placed due to network error.");
+    } finally {
+      setPlacing(false);
+    }
   }
 
   return (
@@ -107,6 +211,8 @@ export function CheckoutForm() {
                   Full name
                 </label>
                 <input
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   className="mt-2 w-full rounded-t-md border-none bg-ah-surface-high px-4 py-3 focus:ring-2 focus:ring-ah-primary/20"
                   placeholder="Your name"
                   autoComplete="name"
@@ -118,6 +224,8 @@ export function CheckoutForm() {
                 </label>
                 <input
                   type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="mt-2 w-full rounded-t-md border-none bg-ah-surface-high px-4 py-3 focus:ring-2 focus:ring-ah-primary/20"
                   placeholder={`+91 ${PHONE_DISPLAY}`}
                   autoComplete="tel"
@@ -130,8 +238,20 @@ export function CheckoutForm() {
               </label>
               <textarea
                 rows={3}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
                 className="mt-2 w-full rounded-t-md border-none bg-ah-surface-high px-4 py-3 focus:ring-2 focus:ring-ah-primary/20"
                 placeholder="Sector, society, landmark near Ghaziabad / Noida 62"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-bold uppercase tracking-widest text-ah-on-surface-variant">Notes for chef</label>
+              <textarea
+                rows={2}
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                className="mt-2 w-full rounded-t-md border-none bg-ah-surface-high px-4 py-3 focus:ring-2 focus:ring-ah-primary/20"
+                placeholder="Less spice, no onion, gate pass, etc."
               />
             </div>
           </div>
@@ -210,7 +330,10 @@ export function CheckoutForm() {
               <button
                 key={w}
                 type="button"
-                className="rounded-xl border-2 border-ah-outline-variant/50 bg-white px-5 py-3 text-sm font-semibold text-ah-on-bg hover:border-ah-primary"
+                onClick={() => setDeliveryWindow(w)}
+                className={`rounded-xl border-2 bg-white px-5 py-3 text-sm font-semibold text-ah-on-bg ${
+                  deliveryWindow === w ? "border-ah-primary" : "border-ah-outline-variant/50 hover:border-ah-primary"
+                }`}
               >
                 {w}
               </button>
@@ -220,16 +343,23 @@ export function CheckoutForm() {
 
         <section className="rounded-xl bg-ah-surface-low p-6 md:p-8">
           <h2 className="font-serif-display text-2xl text-ah-secondary">3. Payment</h2>
-          <p className="mt-2 text-sm text-ah-on-surface-variant">UPI / card (demo). No live charge here.</p>
+          <p className="mt-2 text-sm text-ah-on-surface-variant">UPI only.</p>
           <div className="mt-6 space-y-4">
             <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-ah-outline-variant/50 bg-white p-4">
               <input type="radio" name="pay" defaultChecked className="h-5 w-5 text-ah-primary" />
               <span className="font-medium">UPI / QR</span>
             </label>
-            <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-ah-outline-variant/50 bg-white p-4">
-              <input type="radio" name="pay" className="h-5 w-5 text-ah-primary" />
-              <span className="font-medium">Card</span>
-            </label>
+            <div>
+              <label className="text-xs font-bold uppercase tracking-widest text-ah-on-surface-variant">
+                UPI reference (optional)
+              </label>
+              <input
+                value={upiRef}
+                onChange={(e) => setUpiRef(e.target.value)}
+                className="mt-2 w-full rounded-t-md border-none bg-ah-surface-high px-4 py-3"
+                placeholder="e.g. 413245678901"
+              />
+            </div>
           </div>
         </section>
       </div>
@@ -237,13 +367,38 @@ export function CheckoutForm() {
       <aside className="lg:col-span-5">
         <div className="sticky top-24 rounded-xl border border-ah-outline-variant/40 bg-white p-6 shadow-sm">
           <h3 className="font-serif-display text-xl text-emerald-950">Order summary</h3>
+          {cart.length === 0 ? (
+            <p className="mt-4 text-sm text-ah-on-surface-variant">
+              Your cart is empty. Go to <Link href="/menu" className="underline">Daily menu</Link> and add dishes.
+            </p>
+          ) : (
+            <ul className="mt-4 space-y-3 text-sm">
+              {cart.map((item) => (
+                <li key={item.id} className="rounded-lg bg-ah-surface-low p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-medium">{item.name}</span>
+                    <span>Rs {item.priceInr * item.quantity}</span>
+                  </div>
+                  <div className="mt-2 flex items-center gap-2">
+                    <button type="button" onClick={() => dec(item.id)} className="h-8 w-8 rounded-full border border-ah-outline-variant">
+                      -
+                    </button>
+                    <span className="min-w-6 text-center">{item.quantity}</span>
+                    <button type="button" onClick={() => inc(item.id)} className="h-8 w-8 rounded-full border border-ah-primary text-ah-primary">
+                      +
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex justify-between text-ah-on-surface-variant">
-              <span>Items (from menu)</span>
-              <span>—</span>
+              <span>Items subtotal</span>
+              <span>Rs {itemsSubtotalInr}</span>
             </li>
             <li className="flex justify-between text-ah-on-surface-variant">
-              <span>Delivery</span>
+              <span>Delivery fee</span>
               <span>{deliveryFeeDisplay ?? "—"}</span>
             </li>
             {quote && quote.ok && !quote.requiresPorterQuote && (
@@ -251,15 +406,28 @@ export function CheckoutForm() {
             )}
             <li className="flex justify-between border-t border-ah-outline-variant/50 pt-3 text-lg font-bold text-ah-primary">
               <span>Total</span>
-              <span>—</span>
+              <span>Rs {grandTotalInr}</span>
             </li>
           </ul>
+          {submitMsg && <p className="mt-4 text-sm font-medium text-ah-secondary">{submitMsg}</p>}
+          {chefWhatsAppUrl && (
+            <a
+              href={chefWhatsAppUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-ah-primary underline"
+            >
+              Notify chef on WhatsApp now
+              <Icon name="arrow_outward" />
+            </a>
+          )}
           <button
             type="button"
+            onClick={placeOrder}
             disabled={!canSubmit}
             className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-ah-primary py-4 font-bold text-white transition hover:bg-ah-primary-container disabled:cursor-not-allowed disabled:bg-stone-300"
           >
-            Place order
+            {placing ? "Placing order..." : "Place order"}
             <Icon name="lock" className="text-xl" />
           </button>
         </div>

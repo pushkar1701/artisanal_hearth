@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Icon } from "@/components/artisan/Icon";
 import { AdminMenu } from "@/components/admin/AdminMenu";
 import { AdminMealPlans } from "@/components/admin/AdminMealPlans";
+import { ChefOrdersPanel } from "@/components/admin/ChefOrdersPanel";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -35,6 +36,8 @@ export default function AdminPage() {
       <AdminMenu />
       <div className="my-12 border-t border-ah-outline-variant/30" />
       <AdminMealPlans />
+      <div className="my-12 border-t border-ah-outline-variant/30" />
+      <ChefOrdersPanel />
     </main>
   );
 }
