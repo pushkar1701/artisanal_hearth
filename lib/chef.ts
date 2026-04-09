@@ -4,7 +4,7 @@ export const CHEF = {
   name: "Mamta Kalra",
   /** No street address — service area only */
   serviceArea:
-    "Home kitchen serving families near Ghaziabad and Noida Sector 62, Uttar Pradesh, India.",
+    "A home kitchen delivering fresh, homemade meals to families across Ghaziabad and Noida Sector 62.",
   fssai: "FSSAI License No.: [Add your 14-digit FSSAI number here — e.g. 1122XXXXXX000XX]",
-  bio: "Home-style North Indian meals cooked in small batches with the same care I use for my own family.",
+  bio: "Authentic North Indian meals, cooked in small batches with a focus on freshness, care, and home-style quality.",
 } as const;
