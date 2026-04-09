@@ -7,8 +7,7 @@ export const metadata: Metadata = {
   title: "Chef",
 };
 
-const IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBf8ZmblvUrpJfpldisAcXNLhxSno0muOFeoGgaUHq-hFiNKswq0xRJYXksGEncAKuHtwLyejbLs24mVQPRnOrCu4E4LiW21xaR41xJXtKfHv-Z2wmgD3AIkFR5quHDUb3J7Rv1z4eql-W-ZcU4v1jJvkc0lgLj273eyyQqTb9jdNZVFg4z3gDhJrthd84DaqNTdHP-BKfUeiHJanzWgldPRfoCR3cGtqXLn-VqJpjAXz-F57sjtmcXKC_RwAuOAh12RCAPP1g-M82Y";
+const IMG = "/chef-mamta-kalra.png";
 
 export default function CooksPage() {
   return (
