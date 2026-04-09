@@ -40,9 +40,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/admin" className={linkClass(isActive("/admin"))}>
-            Admin
-          </Link>
         </nav>
         <div className="flex items-center gap-2 md:gap-5">
           <Link href="/checkout" aria-label="Basket" className="text-emerald-900 md:hidden">
@@ -73,7 +70,7 @@ export function SiteHeader() {
       </div>
       {open && (
         <nav className="flex flex-col gap-1 border-t border-stone-200 bg-stone-50 px-4 py-3 font-serif-display text-base font-medium md:hidden">
-          {[...nav, { href: "/admin", label: "Admin" }].map((item) => (
+          {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}

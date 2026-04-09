@@ -1,39 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/artisan/Icon";
+import { readMealPlans } from "@/lib/meal-plan-store";
 
 export const metadata: Metadata = {
   title: "Meal plans",
 };
 
-const plans = [
-  {
-    name: "Lunch week",
-    price: "₹1,890",
-    period: "/ week",
-    blurb: "5 weekday lunches, one delivery address. Pause or skip anytime.",
-    features: ["Seasonal menu rotation", "Nutrition highlights on every label", "WhatsApp support"],
-    highlighted: false,
-  },
-  {
-    name: "Full hearth",
-    price: "₹3,450",
-    period: "/ week",
-    blurb: "Lunch + dinner, seven days. Best for busy households.",
-    features: ["Priority delivery window", "Chef notes & reheating tips", "Birthday dessert add-on"],
-    highlighted: true,
-  },
-  {
-    name: "Weekend ease",
-    price: "₹980",
-    period: "/ weekend",
-    blurb: "Sat–Sun lunch & dinner when you want to log off from cooking.",
-    features: ["Flexible pickup", "Party-size upgrade available", "Kid-friendly spice"],
-    highlighted: false,
-  },
-];
+export const dynamic = "force-dynamic";
 
-export default function MealPlansPage() {
+export default async function MealPlansPage() {
+  const { plans } = await readMealPlans();
   return (
     <main className="mx-auto max-w-screen-2xl px-6 py-14 md:px-8">
       <header className="mb-14 text-center">

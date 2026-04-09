@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Daily menu",
 };
 
-/** Always read fresh menu from disk (not a stale build snapshot). */
+/** Always read fresh menu from storage (KV or local fallback). */
 export const dynamic = "force-dynamic";
 
 const PLACEHOLDER =

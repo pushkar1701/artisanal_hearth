@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Icon } from "@/components/artisan/Icon";
 import { AdminMenu } from "@/components/admin/AdminMenu";
+import { AdminMealPlans } from "@/components/admin/AdminMealPlans";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -10,11 +11,10 @@ export default function AdminPage() {
   return (
     <main className="mx-auto max-w-screen-2xl px-6 py-12 md:px-8">
       <header className="mb-10">
-        <h1 className="font-serif-display text-4xl text-ah-on-bg md:text-5xl">Menu admin</h1>
+        <h1 className="font-serif-display text-4xl text-ah-on-bg md:text-5xl">Admin dashboard</h1>
         <p className="mt-2 max-w-2xl text-ah-on-surface-variant">
-          Up to 5 dishes on the daily menu. Changes save to <code className="text-sm">data/menu.json</code> when you
-          enter the admin password and click save. Set <code className="text-sm">ADMIN_SECRET</code> in{" "}
-          <code className="text-sm">.env.local</code> for saves to succeed locally.
+          Manage your daily menu and meal plans from one place. Set <code className="text-sm">ADMIN_SECRET</code> in
+          environment variables. On Vercel, connect Upstash Redis to persist admin changes.
         </p>
       </header>
       <div className="mb-10 grid gap-4 sm:grid-cols-3">
@@ -33,6 +33,8 @@ export default function AdminPage() {
         ))}
       </div>
       <AdminMenu />
+      <div className="my-12 border-t border-ah-outline-variant/30" />
+      <AdminMealPlans />
     </main>
   );
 }

@@ -35,7 +35,10 @@ export function AdminMenu() {
   }, []);
 
   useEffect(() => {
-    load();
+    const timer = setTimeout(() => {
+      void load();
+    }, 0);
+    return () => clearTimeout(timer);
   }, [load]);
 
   function update(i: number, patch: Partial<Dish>) {
@@ -100,9 +103,8 @@ export function AdminMenu() {
     <div className="space-y-8">
       <div className="rounded-xl border border-amber-200 bg-amber-50/80 p-4 text-sm text-amber-950">
         <strong>Admin password</strong> is set via <code className="rounded bg-white px-1">ADMIN_SECRET</code>{" "}
-        in your environment. On Vercel, file saves persist only if you use a database or blob store—local
-        <code className="mx-1 rounded bg-white px-1">data/menu.json</code> works on your machine and traditional
-        servers.
+        in your environment. On Vercel, connect Upstash Redis so admin saves persist across deployments.
+        Without KV env vars, it falls back to local <code className="mx-1 rounded bg-white px-1">data/menu.json</code>.
       </div>
 
       <div className="flex flex-wrap items-end gap-4">
